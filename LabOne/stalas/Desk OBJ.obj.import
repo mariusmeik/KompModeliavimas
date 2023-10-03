@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ct7w0rq7dkh0s"
+path="res://.godot/imported/Desk OBJ.obj-e3dcfd585c0dc387bbb5ef60a97001b3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Desk OBJ.obj-e3dcfd585c0dc387bbb5ef60a97001b3.mesh"]
+
+source_file="res://stalas/Desk OBJ.obj"
+dest_files=["res://.godot/imported/Desk OBJ.obj-e3dcfd585c0dc387bbb5ef60a97001b3.mesh", "res://.godot/imported/Desk OBJ.obj-e3dcfd585c0dc387bbb5ef60a97001b3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

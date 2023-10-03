@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d28n0rqosaioc"
+path="res://.godot/imported/bed.obj-584e30c75457494af4f0648d4b4c8a7f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bed.obj-584e30c75457494af4f0648d4b4c8a7f.mesh"]
+
+source_file="res://lova/bed.obj"
+dest_files=["res://.godot/imported/bed.obj-584e30c75457494af4f0648d4b4c8a7f.mesh", "res://.godot/imported/bed.obj-584e30c75457494af4f0648d4b4c8a7f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,139 @@
+[gd_scene load_steps=26 format=3 uid="uid://bxbj0hpceohck"]
+
+[ext_resource type="Texture2D" uid="uid://se0stfu727wo" path="res://lova/6.jpg" id="1_cknwu"]
+[ext_resource type="Texture2D" uid="uid://copli8j3gbt8f" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_albedo.png" id="1_ihr3t"]
+[ext_resource type="ArrayMesh" uid="uid://ct7w0rq7dkh0s" path="res://stalas/Desk OBJ.obj" id="4_4ki30"]
+[ext_resource type="Texture2D" uid="uid://di2efppghgfmt" path="res://stalas/Textures/Top Texture.jpg" id="5_kdv85"]
+[ext_resource type="ArrayMesh" uid="uid://d28n0rqosaioc" path="res://lova/bed.obj" id="5_lxkbf"]
+[ext_resource type="Texture2D" uid="uid://c5acyb21vuut5" path="res://stalas/Textures/Top Norm.jpg" id="6_uno7x"]
+[ext_resource type="Texture2D" uid="uid://cat1gmi86qoal" path="res://stalas/Textures/Legs Texture.jpg" id="7_nk0am"]
+[ext_resource type="Texture2D" uid="uid://c2h82qaog7ck4" path="res://stalas/Textures/Legs Norm.jpg" id="8_rtx41"]
+[ext_resource type="Texture2D" uid="uid://ctkk6xkhbmgc6" path="res://stalas/Textures/Under Texture.jpg" id="9_tf1p0"]
+[ext_resource type="Texture2D" uid="uid://ctkjacl0tyxlo" path="res://stalas/Textures/Under Norm.jpg" id="10_id6ir"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d23qu"]
+size = Vector3(5, 0.1, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6boh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oje2m"]
+albedo_color = Color(0.670588, 0.34902, 0.0313726, 1)
+albedo_texture = ExtResource("1_ihr3t")
+normal_enabled = true
+normal_scale = -2.53
+ao_enabled = true
+ao_light_affect = 0.57
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdbev"]
+albedo_texture = ExtResource("1_cknwu")
+
+[sub_resource type="Skin" id="Skin_61otv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xcg6n"]
+size = Vector3(45, 22.3011, 78)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1ctp"]
+size = Vector3(45.9697, 42.5982, 2.29606)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2d6s"]
+size = Vector3(0.0881081, 0.434009, 0.0746407)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7g4ip"]
+size = Vector3(0.785059, 0.0617617, 0.557308)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l6bw"]
+albedo_texture = ExtResource("5_kdv85")
+normal_enabled = true
+normal_texture = ExtResource("6_uno7x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1burf"]
+albedo_texture = ExtResource("7_nk0am")
+normal_enabled = true
+normal_texture = ExtResource("8_rtx41")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7riv"]
+albedo_texture = ExtResource("7_nk0am")
+normal_enabled = true
+normal_texture = ExtResource("8_rtx41")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q78iu"]
+albedo_texture = ExtResource("7_nk0am")
+normal_enabled = true
+normal_texture = ExtResource("8_rtx41")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_engfs"]
+albedo_texture = ExtResource("7_nk0am")
+normal_enabled = true
+normal_texture = ExtResource("8_rtx41")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nr5p"]
+albedo_texture = ExtResource("9_tf1p0")
+normal_enabled = true
+normal_texture = ExtResource("10_id6ir")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.969838, -0.23241, -0.0734838, 0.229815, 0.771374, 0.593437, -0.0812372, -0.592425, 0.801519, -0.252367, 3.62627, 5.83169)
+
+[node name="Floor" type="RigidBody3D" parent="."]
+disable_mode = 1
+
+[node name="FloorColision" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_d23qu")
+
+[node name="FloorMesh" type="CSGBox3D" parent="Floor"]
+material_override = SubResource("StandardMaterial3D_w6boh")
+size = Vector3(5, 0.1, 4)
+material = SubResource("StandardMaterial3D_oje2m")
+
+[node name="Bed" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.000119379, 0, -0.0149995, 0, 0.015, 0, 0.0149995, 0, 0.000119379, 1.80143, 0, -1.55162)
+material_override = SubResource("StandardMaterial3D_jdbev")
+mesh = ExtResource("5_lxkbf")
+skin = SubResource("Skin_61otv")
+
+[node name="lova" type="RigidBody3D" parent="Bed"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 32.4178, 5.68842, 0.726189)
+
+[node name="atlosas" type="CollisionShape3D" parent="Bed/lova"]
+transform = Transform3D(1, 0, 2.23517e-08, 0, 0.999998, 0, -2.23517e-08, 0, 1, -32.7074, 9.01507, 2.31693)
+shape = SubResource("BoxShape3D_xcg6n")
+
+[node name="patiLova" type="CollisionShape3D" parent="Bed/lova"]
+transform = Transform3D(1, 0, 1.71363e-08, 0, 1, 0, -1.71363e-08, 0, 1, -34.2969, 19.6491, -38.1246)
+shape = SubResource("BoxShape3D_f1ctp")
+
+[node name="stalas" type="RigidBody3D" parent="."]
+
+[node name="koja" type="CollisionShape3D" parent="stalas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329504, 0.26374, -1.93528)
+shape = SubResource("BoxShape3D_y2d6s")
+
+[node name="stalvirsioColision" type="CollisionShape3D" parent="stalas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.679286, 0.508643, -1.74035)
+shape = SubResource("BoxShape3D_7g4ip")
+
+[node name="koja2" type="CollisionShape3D" parent="stalas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329874, 0.264818, -1.54541)
+shape = SubResource("BoxShape3D_y2d6s")
+
+[node name="koja3" type="CollisionShape3D" parent="stalas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02473, 0.26374, -1.54535)
+shape = SubResource("BoxShape3D_y2d6s")
+
+[node name="staloImportas" type="MeshInstance3D" parent="stalas"]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0.675338, 0.451876, -1.73363)
+mesh = ExtResource("4_4ki30")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2l6bw")
+surface_material_override/1 = SubResource("StandardMaterial3D_1burf")
+surface_material_override/2 = SubResource("StandardMaterial3D_w7riv")
+surface_material_override/3 = SubResource("StandardMaterial3D_q78iu")
+surface_material_override/4 = SubResource("StandardMaterial3D_engfs")
+surface_material_override/5 = SubResource("StandardMaterial3D_1nr5p")
+
+[node name="koja4" type="CollisionShape3D" parent="stalas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02742, 0.26374, -1.93275)
+shape = SubResource("BoxShape3D_y2d6s")
