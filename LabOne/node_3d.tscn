@@ -1,6 +1,5 @@
-[gd_scene load_steps=77 format=3 uid="uid://bxbj0hpceohck"]
+[gd_scene load_steps=76 format=3 uid="uid://bxbj0hpceohck"]
 
-[ext_resource type="Texture2D" uid="uid://se0stfu727wo" path="res://lova/6.jpg" id="1_cknwu"]
 [ext_resource type="Texture2D" uid="uid://copli8j3gbt8f" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_albedo.png" id="1_ihr3t"]
 [ext_resource type="Texture2D" uid="uid://dsohpxxmidde8" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_ao.png" id="2_7jufe"]
 [ext_resource type="Texture2D" uid="uid://os11ludh3qvc" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_roughness.png" id="3_ske0j"]
@@ -47,16 +46,19 @@ roughness_texture = ExtResource("3_ske0j")
 ao_enabled = true
 ao_texture = ExtResource("2_7jufe")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdbev"]
-albedo_texture = ExtResource("1_cknwu")
-
-[sub_resource type="Skin" id="Skin_61otv"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_xcg6n"]
-size = Vector3(45, 22.3011, 78)
+size = Vector3(45, 22.3011, 74.9792)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1ctp"]
-size = Vector3(45.9697, 46.3144, 2.29606)
+size = Vector3(42.7875, 46.3144, 2.29606)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cehil"]
+albedo_color = Color(1, 0.501961, 1, 1)
+roughness = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjyi3"]
+albedo_color = Color(0.513726, 0.270588, 0.439216, 1)
+roughness = 0.95
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y2d6s"]
 size = Vector3(0.0881081, 0.434009, 0.0746407)
@@ -227,20 +229,20 @@ material = SubResource("StandardMaterial3D_7xcbi")
 [node name="lova" type="RigidBody3D" parent="."]
 transform = Transform3D(0.00795864, 0, -0.999968, 0, 1, 0, 0.999968, 0, 0.00795864, 1.86036, 0.0853263, -1.58353)
 
-[node name="Bed" type="MeshInstance3D" parent="lova"]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_jdbev")
-mesh = ExtResource("5_lxkbf")
-skin = SubResource("Skin_61otv")
-skeleton = NodePath("../..")
-
 [node name="atlosas" type="CollisionShape3D" parent="lova"]
-transform = Transform3D(0.01, 0, 2.25555e-10, 0, 0.01, 0, -2.25555e-10, 0, 0.01, 0, 0.126517, 0)
+transform = Transform3D(0.01, 0, 2.25555e-10, 0, 0.01, 0, -2.25555e-10, 0, 0.01, -1.51396e-05, 0.126517, 0.00192726)
 shape = SubResource("BoxShape3D_xcg6n")
 
 [node name="patiLova" type="CollisionShape3D" parent="lova"]
-transform = Transform3D(0.01, 0, 1.67347e-10, 0, 0.01, 0, -1.67347e-10, 0, 0.01, 0.00306892, 0.238981, -0.385592)
+transform = Transform3D(0.01, 0, 1.67347e-10, 0, 0.01, 0, -1.67347e-10, 0, 0.01, -0.0020318, 0.238981, -0.385633)
 shape = SubResource("BoxShape3D_f1ctp")
+
+[node name="BedImportas" type="MeshInstance3D" parent="lova"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.0023663, 0.00616817, -0.0123018)
+mesh = ExtResource("5_lxkbf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_cehil")
+surface_material_override/11 = SubResource("StandardMaterial3D_vjyi3")
 
 [node name="stalas" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0316901)
