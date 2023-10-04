@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bxbj0hpceohck"]
+[gd_scene load_steps=53 format=3 uid="uid://bxbj0hpceohck"]
 
 [ext_resource type="Texture2D" uid="uid://se0stfu727wo" path="res://lova/6.jpg" id="1_cknwu"]
 [ext_resource type="Texture2D" uid="uid://copli8j3gbt8f" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_albedo.png" id="1_ihr3t"]
@@ -23,6 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://bxysmchdhvwnx" path="res://spintaDrabuziu/MAPS/artisan_hrast.jpg" id="21_25461"]
 [ext_resource type="Texture2D" uid="uid://7ap0whkfxrn4" path="res://spintaDrabuziu/MAPS/artisan_hrast bump.jpg" id="22_qq3a8"]
 [ext_resource type="Texture2D" uid="uid://c2vibdn08spch" path="res://spintaDrabuziu/MAPS/artisan_hrast roughness.jpg" id="23_xywe2"]
+[ext_resource type="ArrayMesh" uid="uid://c55d32rum2vj" path="res://pc/uploads_files_3523588_pc.obj" id="24_pmve5"]
+[ext_resource type="Texture2D" uid="uid://b8s7ijm3raqps" path="res://pc/MetalStainlessSteelBrushedElongated005/METALNESS/3K/MetalStainlessSteelBrushedElongated005_COL_3K_METALNESS.jpg" id="25_ciwt7"]
+[ext_resource type="Texture2D" uid="uid://24q3n6vg435u" path="res://pc/MetalStainlessSteelBrushedElongated005/METALNESS/3K/MetalStainlessSteelBrushedElongated005_NRM_3K_METALNESS.jpg" id="26_nghaa"]
+[ext_resource type="Texture2D" uid="uid://doe44u6njvklx" path="res://pc/MetalStainlessSteelBrushedElongated005/METALNESS/3K/MetalStainlessSteelBrushedElongated005_METALNESS_3K_METALNESS.jpg" id="27_2p38c"]
+[ext_resource type="Texture2D" uid="uid://bh2n2o0hqq8uc" path="res://pc/MetalStainlessSteelBrushedElongated005/METALNESS/3K/MetalStainlessSteelBrushedElongated005_ROUGHNESS_3K_METALNESS.jpg" id="28_fr2ax"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d23qu"]
 size = Vector3(5, 0.1, 4)
@@ -122,6 +127,18 @@ albedo_texture = ExtResource("21_25461")
 roughness_texture = ExtResource("23_xywe2")
 normal_enabled = true
 normal_texture = ExtResource("22_qq3a8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dmpki"]
+albedo_texture = ExtResource("25_ciwt7")
+metallic = 1.0
+metallic_specular = 0.49
+metallic_texture = ExtResource("27_2p38c")
+roughness_texture = ExtResource("28_fr2ax")
+ao_enabled = true
+ao_texture = ExtResource("26_nghaa")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fswvr"]
+size = Vector3(0.117571, 0.263552, 0.243556)
 
 [node name="Node3D" type="Node3D"]
 
@@ -230,3 +247,31 @@ surface_material_override/3 = SubResource("StandardMaterial3D_k4aq1")
 surface_material_override/4 = SubResource("StandardMaterial3D_k4aq1")
 surface_material_override/5 = SubResource("StandardMaterial3D_k4aq1")
 surface_material_override/6 = SubResource("StandardMaterial3D_k4aq1")
+
+[node name="kompas" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.919545, 0, -1.84426)
+
+[node name="pcImportas" type="MeshInstance3D" parent="kompas"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -0.0504772, 0.187495, 0.0191529)
+mesh = ExtResource("24_pmve5")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/1 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/2 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/3 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/4 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/5 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/6 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/7 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/8 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/9 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/10 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/11 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/12 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/13 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/14 = SubResource("StandardMaterial3D_dmpki")
+surface_material_override/15 = SubResource("StandardMaterial3D_dmpki")
+
+[node name="kompoColision" type="CollisionShape3D" parent="kompas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0473404, 0.187783, -0.0155864)
+shape = SubResource("BoxShape3D_fswvr")
