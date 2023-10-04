@@ -56,7 +56,7 @@ albedo_texture = ExtResource("1_cknwu")
 size = Vector3(45, 22.3011, 78)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1ctp"]
-size = Vector3(45.9697, 42.5982, 2.29606)
+size = Vector3(45.9697, 46.3144, 2.29606)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y2d6s"]
 size = Vector3(0.0881081, 0.434009, 0.0746407)
@@ -224,24 +224,26 @@ shape = SubResource("BoxShape3D_d23qu")
 size = Vector3(5, 0.1, 4)
 material = SubResource("StandardMaterial3D_7xcbi")
 
-[node name="Bed" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.000119379, 0, -0.0149995, 0, 0.015, 0, 0.0149995, 0, 0.000119379, 1.80143, 0, -1.55162)
+[node name="lova" type="RigidBody3D" parent="."]
+transform = Transform3D(0.00795864, 0, -0.999968, 0, 1, 0, 0.999968, 0, 0.00795864, 1.86036, 0.0853263, -1.58353)
+
+[node name="Bed" type="MeshInstance3D" parent="lova"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_jdbev")
 mesh = ExtResource("5_lxkbf")
 skin = SubResource("Skin_61otv")
+skeleton = NodePath("../..")
 
-[node name="lova" type="RigidBody3D" parent="Bed"]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 32.4178, 5.68842, 0.726189)
-
-[node name="atlosas" type="CollisionShape3D" parent="Bed/lova"]
-transform = Transform3D(1, 0, 2.23517e-08, 0, 0.999998, 0, -2.23517e-08, 0, 1, -32.7074, 9.01507, 2.31693)
+[node name="atlosas" type="CollisionShape3D" parent="lova"]
+transform = Transform3D(0.01, 0, 2.25555e-10, 0, 0.01, 0, -2.25555e-10, 0, 0.01, 0, 0.126517, 0)
 shape = SubResource("BoxShape3D_xcg6n")
 
-[node name="patiLova" type="CollisionShape3D" parent="Bed/lova"]
-transform = Transform3D(1, 0, 1.71363e-08, 0, 1, 0, -1.71363e-08, 0, 1, -34.2969, 19.6491, -38.1246)
+[node name="patiLova" type="CollisionShape3D" parent="lova"]
+transform = Transform3D(0.01, 0, 1.67347e-10, 0, 0.01, 0, -1.67347e-10, 0, 0.01, 0.00306892, 0.238981, -0.385592)
 shape = SubResource("BoxShape3D_f1ctp")
 
 [node name="stalas" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0316901)
 
 [node name="koja" type="CollisionShape3D" parent="stalas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329504, 0.26374, -1.93528)
