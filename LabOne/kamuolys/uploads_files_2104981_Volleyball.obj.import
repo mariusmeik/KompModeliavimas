@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjn2r3okrdf3g"
+path="res://.godot/imported/uploads_files_2104981_Volleyball.obj-ddb9c04cc69529b72ef68fbd5f8bb136.mesh"
+
+[deps]
+
+files=["res://.godot/imported/uploads_files_2104981_Volleyball.obj-ddb9c04cc69529b72ef68fbd5f8bb136.mesh"]
+
+source_file="res://kamuolys/uploads_files_2104981_Volleyball.obj"
+dest_files=["res://.godot/imported/uploads_files_2104981_Volleyball.obj-ddb9c04cc69529b72ef68fbd5f8bb136.mesh", "res://.godot/imported/uploads_files_2104981_Volleyball.obj-ddb9c04cc69529b72ef68fbd5f8bb136.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

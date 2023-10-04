@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bxbj0hpceohck"]
+[gd_scene load_steps=77 format=3 uid="uid://bxbj0hpceohck"]
 
 [ext_resource type="Texture2D" uid="uid://se0stfu727wo" path="res://lova/6.jpg" id="1_cknwu"]
 [ext_resource type="Texture2D" uid="uid://copli8j3gbt8f" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_albedo.png" id="1_ihr3t"]
@@ -35,11 +35,10 @@
 [ext_resource type="ArrayMesh" uid="uid://u2dsric2wam" path="res://klaviatura/uploads_files_2519687_keyboard+black.obj" id="33_gv0e3"]
 [ext_resource type="Texture2D" uid="uid://d4e4mpd8x6mt8" path="res://klaviatura/download.jpg" id="34_6qnex"]
 [ext_resource type="ArrayMesh" uid="uid://droegtig08fe1" path="res://gertuve/uploads_files_2370216_bidon+v7.obj" id="35_7snbw"]
+[ext_resource type="ArrayMesh" uid="uid://bjn2r3okrdf3g" path="res://kamuolys/uploads_files_2104981_Volleyball.obj" id="35_qmeoa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d23qu"]
 size = Vector3(5, 0.1, 4)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6boh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xcbi"]
 albedo_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -149,12 +148,15 @@ size = Vector3(0.117571, 0.263552, 0.243556)
 size = Vector3(543.536, 314.098, 30.8751)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su12u"]
-albedo_texture = ExtResource("25_ciwt7")
 metallic = 1.0
+metallic_specular = 0.51
 metallic_texture = ExtResource("27_2p38c")
+roughness = 0.0
 roughness_texture = ExtResource("28_fr2ax")
 normal_enabled = true
 normal_texture = ExtResource("26_nghaa")
+detail_enabled = true
+detail_albedo = ExtResource("30_y1umk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kfvpe"]
 albedo_texture = ExtResource("30_y1umk")
@@ -180,6 +182,13 @@ albedo_color = Color(0.847059, 0.490196, 0, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_r1oh3"]
 size = Vector3(0.734145, 0.0356166, 0.292301)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2lgh"]
+albedo_color = Color(0.462745, 0.258824, 0.309804, 1)
+roughness = 0.65
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ptbm8"]
+radius = 0.109468
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e057j"]
 albedo_color = Color(0, 0.247059, 0.247059, 1)
 roughness = 0.47
@@ -203,7 +212,7 @@ radius = 0.0442439
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.969838, -0.23241, -0.0734838, 0.229815, 0.771374, 0.593437, -0.0812372, -0.592425, 0.801519, -0.252367, 3.62627, 5.83169)
+transform = Transform3D(0.779765, 0.095227, 0.618787, -0.598266, 0.40462, 0.691637, -0.184511, -0.909513, 0.37248, 2.77049, 2.73849, 1.32084)
 
 [node name="Floor" type="RigidBody3D" parent="."]
 disable_mode = 1
@@ -212,7 +221,6 @@ disable_mode = 1
 shape = SubResource("BoxShape3D_d23qu")
 
 [node name="FloorMesh" type="CSGBox3D" parent="Floor"]
-material_override = SubResource("StandardMaterial3D_w6boh")
 size = Vector3(5, 0.1, 4)
 material = SubResource("StandardMaterial3D_7xcbi")
 
@@ -628,7 +636,18 @@ surface_material_override/255 = SubResource("StandardMaterial3D_i7qgo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710456, 0.57456, -0.00973868)
 shape = SubResource("BoxShape3D_r1oh3")
 
-[node name="proteinai" type="RigidBody3D" parent="."]
+[node name="kamuolys" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38087, 0, -0.528778)
+
+[node name="kamuolysImport" type="MeshInstance3D" parent="kamuolys"]
+transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, -0.150813, 0.05, 0.00231504)
+mesh = ExtResource("35_qmeoa")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_v2lgh")
+
+[node name="kamuolysColision" type="CollisionShape3D" parent="kamuolys"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.155219, 0.160564, 0)
+shape = SubResource("SphereShape3D_ptbm8")
 
 [node name="gertuve" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.269929, -0.125932, -1.79313)
