@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bxbj0hpceohck"]
+[gd_scene load_steps=46 format=3 uid="uid://bxbj0hpceohck"]
 
 [ext_resource type="Texture2D" uid="uid://se0stfu727wo" path="res://lova/6.jpg" id="1_cknwu"]
 [ext_resource type="Texture2D" uid="uid://copli8j3gbt8f" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_albedo.png" id="1_ihr3t"]
@@ -19,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://dpn422iy1l3y2" path="res://spintele/Textures/Wood Dresser_Metallic.png" id="17_q1ys4"]
 [ext_resource type="Texture2D" uid="uid://bq22b0l2kreak" path="res://spintele/Textures/Wood Dresser_Normal.png" id="18_tv14g"]
 [ext_resource type="Texture2D" uid="uid://puk6t1oecvyf" path="res://spintele/Textures/Wood Dresser_Roughness.png" id="19_oyakc"]
+[ext_resource type="ArrayMesh" uid="uid://qbhln18sjve3" path="res://spintaDrabuziu/uploads_files_3502086_Wardrobe_Oak.obj" id="20_c021q"]
+[ext_resource type="Texture2D" uid="uid://bxysmchdhvwnx" path="res://spintaDrabuziu/MAPS/artisan_hrast.jpg" id="21_25461"]
+[ext_resource type="Texture2D" uid="uid://7ap0whkfxrn4" path="res://spintaDrabuziu/MAPS/artisan_hrast bump.jpg" id="22_qq3a8"]
+[ext_resource type="Texture2D" uid="uid://c2vibdn08spch" path="res://spintaDrabuziu/MAPS/artisan_hrast roughness.jpg" id="23_xywe2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d23qu"]
 size = Vector3(5, 0.1, 4)
@@ -102,6 +106,22 @@ normal_texture = ExtResource("18_tv14g")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o01nd"]
 size = Vector3(0.33418, 0.408442, 0.200845)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5inbf"]
+size = Vector3(0.504314, 2.07302, 1.45276)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8iqs2"]
+albedo_texture = ExtResource("21_25461")
+roughness_texture = ExtResource("23_xywe2")
+normal_enabled = true
+normal_texture = ExtResource("22_qq3a8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4aq1"]
+albedo_color = Color(1, 0.643137, 0.521569, 1)
+albedo_texture = ExtResource("21_25461")
+roughness_texture = ExtResource("23_xywe2")
+normal_enabled = true
+normal_texture = ExtResource("22_qq3a8")
 
 [node name="Node3D" type="Node3D"]
 
@@ -189,6 +209,24 @@ mesh = ExtResource("15_wtoi6")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_kxhmx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="spintele"]
+[node name="spintelesColision" type="CollisionShape3D" parent="spintele"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0703539, 0.256009, -1.81952)
 shape = SubResource("BoxShape3D_o01nd")
+
+[node name="spinta" type="RigidBody3D" parent="."]
+
+[node name="spintaColision" type="CollisionShape3D" parent="spinta"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24876, 1.09286, -1.27149)
+shape = SubResource("BoxShape3D_5inbf")
+
+[node name="spintosImportas" type="MeshInstance3D" parent="spinta"]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -1.405, 0.0567405, -0.469881)
+mesh = ExtResource("20_c021q")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8iqs2")
+surface_material_override/1 = SubResource("StandardMaterial3D_k4aq1")
+surface_material_override/2 = SubResource("StandardMaterial3D_k4aq1")
+surface_material_override/3 = SubResource("StandardMaterial3D_k4aq1")
+surface_material_override/4 = SubResource("StandardMaterial3D_k4aq1")
+surface_material_override/5 = SubResource("StandardMaterial3D_k4aq1")
+surface_material_override/6 = SubResource("StandardMaterial3D_k4aq1")
