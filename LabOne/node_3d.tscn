@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bxbj0hpceohck"]
+[gd_scene load_steps=32 format=3 uid="uid://bxbj0hpceohck"]
 
 [ext_resource type="Texture2D" uid="uid://se0stfu727wo" path="res://lova/6.jpg" id="1_cknwu"]
 [ext_resource type="Texture2D" uid="uid://copli8j3gbt8f" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_albedo.png" id="1_ihr3t"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c2h82qaog7ck4" path="res://stalas/Textures/Legs Norm.jpg" id="8_rtx41"]
 [ext_resource type="Texture2D" uid="uid://ctkk6xkhbmgc6" path="res://stalas/Textures/Under Texture.jpg" id="9_tf1p0"]
 [ext_resource type="Texture2D" uid="uid://ctkjacl0tyxlo" path="res://stalas/Textures/Under Norm.jpg" id="10_id6ir"]
+[ext_resource type="ArrayMesh" uid="uid://cs5vhhvc16k6q" path="res://kede/uploads_files_4179995_MAD_QUEEN_CHAIR.obj" id="11_rrr5y"]
+[ext_resource type="Texture2D" uid="uid://crlayn0o06el4" path="res://kede/3_1_1_b.jpg" id="12_4s5u2"]
+[ext_resource type="Texture2D" uid="uid://b2giklwmwkm8r" path="res://kede/dir002 (2).jpg" id="13_ikuun"]
+[ext_resource type="Texture2D" uid="uid://bjojtbcbougo2" path="res://kede/3_1_1_g.jpg" id="14_wayo0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d23qu"]
 size = Vector3(5, 0.1, 4)
@@ -71,6 +75,17 @@ normal_texture = ExtResource("8_rtx41")
 albedo_texture = ExtResource("9_tf1p0")
 normal_enabled = true
 normal_texture = ExtResource("10_id6ir")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bey7d"]
+size = Vector3(0.478573, 0.428744, 0.439703)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0007q"]
+albedo_texture = ExtResource("12_4s5u2")
+roughness = 0.92
+normal_enabled = true
+normal_texture = ExtResource("14_wayo0")
+ao_enabled = true
+ao_texture = ExtResource("13_ikuun")
 
 [node name="Node3D" type="Node3D"]
 
@@ -137,3 +152,15 @@ surface_material_override/5 = SubResource("StandardMaterial3D_1nr5p")
 [node name="koja4" type="CollisionShape3D" parent="stalas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02742, 0.26374, -1.93275)
 shape = SubResource("BoxShape3D_y2d6s")
+
+[node name="kede" type="RigidBody3D" parent="."]
+
+[node name="KedeColision" type="CollisionShape3D" parent="kede"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573395, 0.268373, -1.12296)
+shape = SubResource("BoxShape3D_bey7d")
+
+[node name="kedeImportas" type="MeshInstance3D" parent="kede"]
+transform = Transform3D(-0.00499978, 0, -4.64248e-05, 0, 0.005, 0, 4.64248e-05, 0, -0.00499978, 0.575369, 0.05, -1.12395)
+mesh = ExtResource("11_rrr5y")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0007q")
