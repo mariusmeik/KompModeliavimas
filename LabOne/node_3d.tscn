@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bxbj0hpceohck"]
+[gd_scene load_steps=75 format=3 uid="uid://bxbj0hpceohck"]
 
 [ext_resource type="Texture2D" uid="uid://se0stfu727wo" path="res://lova/6.jpg" id="1_cknwu"]
 [ext_resource type="Texture2D" uid="uid://copli8j3gbt8f" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_albedo.png" id="1_ihr3t"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bt4lj7dqehhmx" path="res://monitorius/walpaperisKarstaAnimeMergaite_xD.jpg" id="30_y1umk"]
 [ext_resource type="ArrayMesh" uid="uid://u2dsric2wam" path="res://klaviatura/uploads_files_2519687_keyboard+black.obj" id="33_gv0e3"]
 [ext_resource type="Texture2D" uid="uid://d4e4mpd8x6mt8" path="res://klaviatura/download.jpg" id="34_6qnex"]
+[ext_resource type="ArrayMesh" uid="uid://droegtig08fe1" path="res://gertuve/uploads_files_2370216_bidon+v7.obj" id="35_7snbw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d23qu"]
 size = Vector3(5, 0.1, 4)
@@ -178,6 +179,26 @@ albedo_color = Color(0.847059, 0.490196, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r1oh3"]
 size = Vector3(0.734145, 0.0356166, 0.292301)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e057j"]
+albedo_color = Color(0, 0.247059, 0.247059, 1)
+roughness = 0.47
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmivb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qt7sb"]
+albedo_color = Color(0.176471, 0.635294, 0.662745, 1)
+roughness = 0.41
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyj16"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1enu0"]
+albedo_color = Color(0.501961, 0.501961, 0.501961, 1)
+roughness = 0.45
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gs8nw"]
+height = 0.235375
+radius = 0.0442439
 
 [node name="Node3D" type="Node3D"]
 
@@ -606,3 +627,22 @@ surface_material_override/255 = SubResource("StandardMaterial3D_i7qgo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="klaviatura"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710456, 0.57456, -0.00973868)
 shape = SubResource("BoxShape3D_r1oh3")
+
+[node name="proteinai" type="RigidBody3D" parent="."]
+
+[node name="gertuve" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.269929, -0.125932, -1.79313)
+
+[node name="gertuveImportas" type="MeshInstance3D" parent="gertuve"]
+transform = Transform3D(0.001, 0, 0, 0, -4.37114e-11, 0.001, 0, -0.001, -4.37114e-11, 0, 0.667077, 0)
+mesh = ExtResource("35_7snbw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_e057j")
+surface_material_override/1 = SubResource("StandardMaterial3D_fmivb")
+surface_material_override/2 = SubResource("StandardMaterial3D_qt7sb")
+surface_material_override/3 = SubResource("StandardMaterial3D_kyj16")
+surface_material_override/4 = SubResource("StandardMaterial3D_1enu0")
+
+[node name="gertuveColision" type="CollisionShape3D" parent="gertuve"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0925684, 0.71684, -0.013227)
+shape = SubResource("CylinderShape3D_gs8nw")
