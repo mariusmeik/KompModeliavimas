@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfo8nucbkgwxq"
+path="res://.godot/imported/Monitor 27' Curved.obj-6bf62e58f9a7c6ec15a06af962dd786e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Monitor 27' Curved.obj-6bf62e58f9a7c6ec15a06af962dd786e.mesh"]
+
+source_file="res://monitorius/Monitor Curved/Monitor 27' Curved.obj"
+dest_files=["res://.godot/imported/Monitor 27' Curved.obj-6bf62e58f9a7c6ec15a06af962dd786e.mesh", "res://.godot/imported/Monitor 27' Curved.obj-6bf62e58f9a7c6ec15a06af962dd786e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

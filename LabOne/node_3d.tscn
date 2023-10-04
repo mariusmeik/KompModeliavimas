@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bxbj0hpceohck"]
+[gd_scene load_steps=60 format=3 uid="uid://bxbj0hpceohck"]
 
 [ext_resource type="Texture2D" uid="uid://se0stfu727wo" path="res://lova/6.jpg" id="1_cknwu"]
 [ext_resource type="Texture2D" uid="uid://copli8j3gbt8f" path="res://parketas/TexturesCom_Wood_ParquetFiveFinger_4K_albedo.png" id="1_ihr3t"]
@@ -28,6 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://24q3n6vg435u" path="res://pc/MetalStainlessSteelBrushedElongated005/METALNESS/3K/MetalStainlessSteelBrushedElongated005_NRM_3K_METALNESS.jpg" id="26_nghaa"]
 [ext_resource type="Texture2D" uid="uid://doe44u6njvklx" path="res://pc/MetalStainlessSteelBrushedElongated005/METALNESS/3K/MetalStainlessSteelBrushedElongated005_METALNESS_3K_METALNESS.jpg" id="27_2p38c"]
 [ext_resource type="Texture2D" uid="uid://bh2n2o0hqq8uc" path="res://pc/MetalStainlessSteelBrushedElongated005/METALNESS/3K/MetalStainlessSteelBrushedElongated005_ROUGHNESS_3K_METALNESS.jpg" id="28_fr2ax"]
+[ext_resource type="ArrayMesh" uid="uid://c3vh47pa7ehy3" path="res://monitorius/uploads_files_2782542_monitor.obj" id="29_1d4u3"]
+[ext_resource type="Texture2D" uid="uid://bt4lj7dqehhmx" path="res://monitorius/walpaperisKarstaAnimeMergaite_xD.jpg" id="30_y1umk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d23qu"]
 size = Vector3(5, 0.1, 4)
@@ -139,6 +141,28 @@ ao_texture = ExtResource("26_nghaa")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fswvr"]
 size = Vector3(0.117571, 0.263552, 0.243556)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uk6xc"]
+size = Vector3(543.536, 314.098, 30.8751)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su12u"]
+albedo_texture = ExtResource("25_ciwt7")
+metallic = 1.0
+metallic_texture = ExtResource("27_2p38c")
+roughness_texture = ExtResource("28_fr2ax")
+normal_enabled = true
+normal_texture = ExtResource("26_nghaa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kfvpe"]
+albedo_texture = ExtResource("30_y1umk")
+albedo_texture_force_srgb = true
+point_size = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yw0qg"]
+size = Vector3(98.4337, 367.054, 14.1246)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xoebx"]
+size = Vector3(200.884, 7.87102, 134.791)
 
 [node name="Node3D" type="Node3D"]
 
@@ -275,3 +299,27 @@ surface_material_override/15 = SubResource("StandardMaterial3D_dmpki")
 [node name="kompoColision" type="CollisionShape3D" parent="kompas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0473404, 0.187783, -0.0155864)
 shape = SubResource("BoxShape3D_fswvr")
+
+[node name="monitorius" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49893, 0.0429645, -2.77805)
+
+[node name="monitoriausEkranoColision" type="CollisionShape3D" parent="monitorius"]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.739327, 0.815702, 0.90626)
+shape = SubResource("BoxShape3D_uk6xc")
+
+[node name="monitoriausImportas" type="MeshInstance3D" parent="monitorius"]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.741105, 0.513834, 0.895763)
+mesh = ExtResource("29_1d4u3")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_su12u")
+surface_material_override/1 = SubResource("StandardMaterial3D_kfvpe")
+surface_material_override/2 = SubResource("StandardMaterial3D_su12u")
+surface_material_override/3 = SubResource("StandardMaterial3D_su12u")
+
+[node name="monitoriausStovoColision" type="CollisionShape3D" parent="monitorius"]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.753832, 0.71098, 0.875114)
+shape = SubResource("BoxShape3D_yw0qg")
+
+[node name="monitoriausPadekloColision" type="CollisionShape3D" parent="monitorius"]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.740043, 0.523008, 0.890712)
+shape = SubResource("BoxShape3D_xoebx")
