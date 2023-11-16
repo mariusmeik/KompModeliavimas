@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://bywnyah8p4lfa"]
+
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_mwboq"]
+[ext_resource type="Texture2D" uid="uid://x0knp41366ff" path="res://tutorial/Enemy.png" id="1_wsuet"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3u5ou"]
+
+[sub_resource type="Animation" id="Animation_hap12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zombis:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_rklvh"]
+resource_name = "die"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zombis:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_sp8th"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zombis:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qxla"]
+_data = {
+"RESET": SubResource("Animation_hap12"),
+"die": SubResource("Animation_rklvh"),
+"walk": SubResource("Animation_sp8th")
+}
+
+[node name="zombie" type="CharacterBody3D"]
+script = ExtResource("1_mwboq")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 1.74846e-07, 0, -1.74846e-07, 1, 0.00222433, 0, 0)
+shape = SubResource("CapsuleShape3D_3u5ou")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8qxla")
+}
+
+[node name="zombis" type="Sprite3D" parent="."]
+texture = ExtResource("1_wsuet")
+hframes = 5
+vframes = 2
+frame = 1

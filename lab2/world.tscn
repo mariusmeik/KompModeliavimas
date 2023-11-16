@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cblyqrcf47h4t"]
+
+[ext_resource type="PackedScene" uid="uid://bywnyah8p4lfa" path="res://character_body_3d.tscn" id="1_dr6ob"]
+[ext_resource type="PackedScene" uid="uid://cgqccf78ujs2n" path="res://zaidejasKlonas.tscn" id="2_mlk3p"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938177, 0, -0.146456)
+
+[node name="zombie" parent="." instance=ExtResource("1_dr6ob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131682, 0, -12.1939)
+
+[node name="Player" parent="." instance=ExtResource("2_mlk3p")]
+transform = Transform3D(0.275285, 0, 0.961363, 0, 1, 0, -0.961363, 0, 0.275285, 7.27366, 2.86102e-06, 0.712715)
+
+[node name="zombie2" parent="." instance=ExtResource("1_dr6ob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02253, 0, -13.3078)
+
+[node name="zombie3" parent="." instance=ExtResource("1_dr6ob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.45207, 0, -5.9234)
+
+[node name="zombie4" parent="." instance=ExtResource("1_dr6ob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.63171, 0, 6.4019)

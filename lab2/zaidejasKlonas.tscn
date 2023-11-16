@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgqccf78ujs2n"]
+
+[ext_resource type="Script" path="res://levels/CharacterBody3D.gd" id="1_gxe30"]
+[ext_resource type="Texture2D" uid="uid://6whk610y058j" path="res://tutorial/fe0bdd2b-8890-4c82-aaf8-7c036272e66b.png" id="2_5dq5g"]
+[ext_resource type="Texture2D" uid="uid://dq8gum5b0848d" path="res://tutorial/starSpin.png" id="3_iii30"]
+[ext_resource type="Texture2D" uid="uid://cbd3f4epfxqnb" path="res://tutorial/665ebd54-85d9-4c1b-8063-62c22fa24c01.png" id="3_qn17l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6dkv"]
+radius = 0.441225
+height = 1.46716
+
+[sub_resource type="Animation" id="Animation_c6nah"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/victory:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_0ihth"]
+resource_name = "shootAnimation"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_68bh7"]
+resource_name = "win"
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/victory:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/victory:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wynpi"]
+_data = {
+"RESET": SubResource("Animation_c6nah"),
+"shootAnimation": SubResource("Animation_0ihth"),
+"win": SubResource("Animation_68bh7")
+}
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_gxe30")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape3D_u6dkv")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -2000)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wynpi")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(345.5, -128.5)
+scale = Vector2(0.919048, 0.294529)
+texture = ExtResource("2_5dq5g")
+hframes = 4
+frame = 1
+
+[node name="victory" type="Sprite2D" parent="CanvasLayer/Control"]
+visible = false
+position = Vector2(6, -319)
+texture = ExtResource("3_iii30")
+hframes = 5
+frame = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -180.0
+offset_right = 180.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qn17l")
