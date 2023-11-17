@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgqccf78ujs2n"]
+[gd_scene load_steps=11 format=3 uid="uid://cgqccf78ujs2n"]
 
 [ext_resource type="Script" path="res://levels/CharacterBody3D.gd" id="1_gxe30"]
 [ext_resource type="Texture2D" uid="uid://6whk610y058j" path="res://tutorial/fe0bdd2b-8890-4c82-aaf8-7c036272e66b.png" id="2_5dq5g"]
 [ext_resource type="Texture2D" uid="uid://dq8gum5b0848d" path="res://tutorial/starSpin.png" id="3_iii30"]
 [ext_resource type="Texture2D" uid="uid://cbd3f4epfxqnb" path="res://tutorial/665ebd54-85d9-4c1b-8063-62c22fa24c01.png" id="3_qn17l"]
+[ext_resource type="AudioStream" uid="uid://da61a8lb6d51j" path="res://sounds/Gunshot Sound Effect Single Shot.mp3" id="5_nb4to"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6dkv"]
 radius = 0.441225
@@ -145,3 +146,8 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_qn17l")
+
+[node name="gunshot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nb4to")
+volume_db = -18.294
+pitch_scale = 1.43

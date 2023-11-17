@@ -6,6 +6,8 @@ const MOUSE_SENS = 0.5
 @onready var anim_player = $AnimationPlayer
 @onready var raycast = $RayCast3D
 @onready var sprite = $CanvasLayer/Control/victory
+@onready var gunshot =$gunshot
+
 var killCount = 0
  
 func _ready():
@@ -38,6 +40,7 @@ func _physics_process(delta):
 	move_and_collide(move_vec * MOVE_SPEED * delta)
  
 	if Input.is_action_pressed("Shoot") and !anim_player.is_playing():
+		gunshot.play()
 		anim_player.play("shootAnimation")
 		var coll = raycast.get_collider()
 		if raycast.is_colliding() and coll.has_method("kill"):

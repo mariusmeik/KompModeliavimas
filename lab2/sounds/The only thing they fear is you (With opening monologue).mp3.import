@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://df0s2x8mv50t0"
+path="res://.godot/imported/The only thing they fear is you (With opening monologue).mp3-acbb0434418a72cb05d5c8177ae33a80.mp3str"
+
+[deps]
+
+source_file="res://sounds/The only thing they fear is you (With opening monologue).mp3"
+dest_files=["res://.godot/imported/The only thing they fear is you (With opening monologue).mp3-acbb0434418a72cb05d5c8177ae33a80.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,16 @@
+GPUParticles3D
+AudioStreamPlayer3D
+AudioStreamPlayer
+Sprite2D
+Sprite3D
+Camera2D
+Camera3D
+Node3D
+AnimatedSprite3D
+AnimationPlayer
+RayCast3D
+CollisionShape3D
+CharacterBody3D
+TextureRect
+Control
+CanvasLayer

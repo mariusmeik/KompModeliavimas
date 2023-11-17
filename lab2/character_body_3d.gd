@@ -4,6 +4,8 @@ const MOVE_SPEED = 1
  
 @onready var raycast = $RayCast3D
 @onready var anim_player = $AnimationPlayer
+@onready var zombieDeathSound = $zombieDiesSound
+@onready var kraujas =$kraujas
  
 var player = null
 var dead = false
@@ -32,6 +34,8 @@ func _physics_process(delta):
 func kill():
 	dead = true
 	$CollisionShape3D.disabled = true
+	zombieDeathSound.play()
+	kraujas.emitting = true
 	anim_player.play("die")
  
 func set_player(p):

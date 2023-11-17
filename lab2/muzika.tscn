@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhmcvx3fka3qt"]
+
+[ext_resource type="AudioStream" uid="uid://df0s2x8mv50t0" path="res://sounds/The only thing they fear is you (With opening monologue).mp3" id="1_18esi"]
+
+[node name="muzika" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_18esi")
+attenuation_model = 3
+unit_size = 3.38
+autoplay = true
+max_distance = 2.0
