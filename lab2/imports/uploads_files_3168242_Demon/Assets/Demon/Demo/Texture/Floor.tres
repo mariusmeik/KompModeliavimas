@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Texture/floor14.tex" id="1_vfix0"]
+
+[resource]
+resource_name = "Floor"
+albedo_texture = ExtResource("1_vfix0")
+metallic = 0.188

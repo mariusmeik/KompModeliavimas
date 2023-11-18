@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgqccf78ujs2n"]
+[gd_scene load_steps=17 format=3 uid="uid://cgqccf78ujs2n"]
 
 [ext_resource type="Script" path="res://levels/CharacterBody3D.gd" id="1_gxe30"]
 [ext_resource type="Texture2D" uid="uid://6whk610y058j" path="res://tutorial/fe0bdd2b-8890-4c82-aaf8-7c036272e66b.png" id="2_5dq5g"]
@@ -90,6 +90,30 @@ _data = {
 "win": SubResource("Animation_68bh7")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fjlx2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lxu2m"]
+
+[sub_resource type="Gradient" id="Gradient_1daxx"]
+offsets = PackedFloat32Array(0.0817121, 0.673152, 0.832685, 1)
+colors = PackedColorArray(1, 1, 0.14902, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o232g"]
+gradient = SubResource("Gradient_1daxx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u6k1a"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 179.01
+initial_velocity_max = 401.23
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 13.82
+color_ramp = SubResource("GradientTexture1D_o232g")
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_gxe30")
 _bullet_scene = ExtResource("2_je25s")
@@ -130,10 +154,31 @@ frame = 1
 
 [node name="victory" type="Sprite2D" parent="CanvasLayer/Control"]
 visible = false
+material = SubResource("CanvasItemMaterial_fjlx2")
 position = Vector2(6, -319)
 texture = ExtResource("3_iii30")
 hframes = 5
 frame = 1
+
+[node name="ugnis1" type="GPUParticles2D" parent="CanvasLayer/Control"]
+material = SubResource("CanvasItemMaterial_lxu2m")
+position = Vector2(222, -181)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_u6k1a")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+
+[node name="ugnis2" type="GPUParticles2D" parent="CanvasLayer/Control"]
+material = SubResource("CanvasItemMaterial_lxu2m")
+position = Vector2(243, -173)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_u6k1a")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8

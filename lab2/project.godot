@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.1", "Forward Plus")
 
 project/assembly_name="G4fps"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 moveLeft={

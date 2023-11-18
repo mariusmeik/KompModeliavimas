@@ -1,0 +1,494 @@
+[gd_scene load_steps=20 format=3 uid="uid://df8rfc1sgpu0w"]
+
+[ext_resource type="Script" path="res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.gd" id="1_s2mhk"]
+[ext_resource type="ArrayMesh" path="res://imports/uploads_files_3168242_Demon/Assets/Demon/Mesh/DemonBoss_mesh/Devil_4300000.mesh" id="2_abh67"]
+[ext_resource type="Material" path="res://imports/uploads_files_3168242_Demon/Assets/Demon/Materials/PBRDemon.tres" id="3_2spt4"]
+[ext_resource type="AudioStream" uid="uid://bbrjaloumrj3k" path="res://sounds/Minecraft Zombie hit - Sound effect (HD).mp3" id="4_erwgo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ig7us"]
+points = PackedVector3Array(2.92711, 2.95637, 0.112129, 1.51533, 2.73907, -0.648127, 1.40659, 2.52178, -0.539492, 0.863414, 3.06493, 0.112129, 2.81864, 2.30449, 0.329496, 3.36208, 2.84763, -0.430856, 0.754672, 2.30449, 0.112129, 1.73255, 3.17366, -0.430856, 0.754672, 2.95637, -0.430856, 0.754672, 2.30449, -0.322221, 3.36208, 2.63051, -0.430856, 3.47082, 2.84763, 0.112129, 0.972156, 2.95637, 0.220764, 2.05878, 3.17366, 0.00349368, 2.71016, 2.30449, 0.00349368, 1.73255, 2.95637, -0.648127, 2.05878, 2.95637, 0.220764, 1.84129, 2.41322, -0.430856, 0.863414, 2.52178, 0.220764, 3.47082, 2.63051, 0.112129, 2.71016, 2.52178, 0.329496, 0.754672, 3.06493, 0.00349368, 2.60142, 3.06493, -0.322221, 0.754672, 2.41322, -0.430856, 3.47082, 2.63051, -0.322221, 1.40659, 3.17366, -0.322221, 0.754672, 3.06493, -0.322221, 1.51533, 2.95637, -0.648127, 3.47082, 2.84763, -0.322221, 1.73255, 2.52178, -0.539492, 2.60142, 2.30449, 0.329496, 1.73255, 2.73907, -0.648127)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tmpl2"]
+points = PackedVector3Array(-0.657684, 2.0872, -0.213426, 0.320067, 3.4996, 0.22086, 0.320067, 3.39079, 0.329464, 0.754672, 2.196, -0.32203, 0.211378, 2.196, 0.655529, -0.00585008, 3.4996, -0.539364, -0.766372, 3.06479, 0.112257, -0.548995, 2.52201, -0.539364, 0.754672, 3.06479, 0.112257, -0.331767, 2.7392, 0.655529, 0.754672, 2.95626, -0.430761, 0.211378, 2.52201, -0.648223, -0.223078, 3.4996, 0.329464, -0.657684, 2.0872, 0.22086, 0.645984, 2.0872, 0.22086, -0.766372, 3.06479, -0.32203, 0.320067, 2.7392, 0.655529, 0.320067, 2.0872, -0.430761, -0.766372, 2.196, -0.32203, 0.211378, 3.4996, -0.539364, -0.223078, 3.06479, -0.648223, 0.10269, 3.06479, 0.655529, 0.754672, 2.30453, 0.22086, -0.223078, 2.196, -0.539364, -0.223078, 2.196, 0.655529, -0.766372, 2.30453, 0.22086, -0.223078, 3.4996, -0.430761, -0.766372, 2.95626, -0.430761, 0.754672, 3.06479, -0.32203, 0.320067, 2.0872, 0.438195, 0.754672, 2.4132, -0.430761, -0.11439, 3.28226, 0.546798)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qua4p"]
+points = PackedVector3Array(-2.83034, 2.30449, 0.112299, -1.52703, 3.17366, -0.104993, -1.52703, 3.17366, -0.430931, -0.766372, 2.30449, -0.3222, -3.37378, 2.73907, -0.430931, -0.766372, 2.73907, 0.220945, -3.37378, 2.95637, 0.112299, -1.52703, 2.73907, -0.648223, -0.766372, 3.06493, -0.3222, -0.766372, 2.30449, 0.112299, -0.766372, 3.06493, 0.112299, -2.3959, 2.30449, 0.220945, -3.15656, 2.95637, -0.430931, -2.50464, 2.52178, -0.430931, -2.07048, 2.95637, 0.220945, -2.07048, 3.17366, 0.00365318, -1.63577, 2.95637, -0.648223, -3.48252, 2.73907, 0.112299, -0.766372, 2.95637, -0.430931, -2.3959, 2.30449, -0.104993, -0.766372, 2.41322, -0.430931, -2.83034, 2.52178, 0.220945, -2.83034, 3.06493, -0.213639, -1.63577, 2.52178, -0.539577, -1.09233, 2.41322, 0.220945, -3.48252, 2.73907, -0.3222, -1.74425, 3.17366, -0.430931, -0.983856, 2.95637, 0.220945, -3.48252, 2.84763, -0.3222, -3.04756, 2.63051, -0.430931, -1.31008, 3.06493, -0.539577, -3.37378, 2.63051, -0.213639)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b5lnc"]
+points = PackedVector3Array(0.211378, 2.08698, -0.430931, -0.766372, -0.0857229, 0.32957, -0.766372, -0.0857229, 0.655529, 0.754672, -0.0857229, 0.655529, -0.223078, 2.08698, 0.438152, 0.428606, 0.0231677, -0.213447, -0.440307, 1.65227, -0.430931, 0.537295, 2.08698, 0.220881, -0.331767, 0.0231677, -0.322242, -0.548995, 2.08698, 0.220881, 0.428606, 1.21777, -0.430931, 0.754672, 0.240524, 0.220881, 0.537295, 2.08698, -0.213447, -0.548995, 2.08698, -0.213447, 0.211378, 2.08698, 0.438152, -0.548995, -0.0857229, -0.104865, -0.766372, 0.131846, 0.655529, 0.754672, 0.131846, 0.655529, -0.548995, 1.21777, -0.322242, 0.645984, -0.0857229, 0.112299, -0.766372, 0.240524, 0.220881, 0.537295, 1.1091, -0.322242, -0.440307, 1.21777, -0.430931, 0.645984, 0.240524, 0.655529, -0.223078, 2.08698, -0.430931, -0.11439, -0.0857229, -0.213447, -0.440307, 0.131846, -0.322242, -0.11439, 0.0231677, -0.322242, -0.657684, 0.0231677, 0.00382335, 0.428606, 1.65227, -0.430931, -0.440307, 2.08698, 0.32957, 0.428606, 2.08698, 0.32957)
+
+[sub_resource type="Curve" id="Curve_4eu5m"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_m6qfe"]
+curve = SubResource("Curve_4eu5m")
+
+[sub_resource type="Curve" id="Curve_y3jjn"]
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tphq6"]
+curve = SubResource("Curve_y3jjn")
+
+[sub_resource type="Gradient" id="Gradient_nmqd6"]
+offsets = PackedFloat32Array(0.0938776, 0.273469, 0.653061)
+colors = PackedColorArray(0, 0, 0, 1, 0.0392157, 0.0392157, 0.0392157, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cpl81"]
+gradient = SubResource("Gradient_nmqd6")
+
+[sub_resource type="Gradient" id="Gradient_wbq2q"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4qgrx"]
+gradient = SubResource("Gradient_wbq2q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lkfmn"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 0)
+spread = 58.8
+gravity = Vector3(0, -10, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_curve = SubResource("CurveTexture_m6qfe")
+linear_accel_min = -100.0
+scale_min = 0.1
+scale_max = 0.2
+color = Color(0.862745, 0, 0.0156863, 1)
+color_ramp = SubResource("GradientTexture1D_4qgrx")
+color_initial_ramp = SubResource("GradientTexture1D_cpl81")
+anim_speed_min = 16.0
+anim_speed_max = 16.0
+anim_speed_curve = SubResource("CurveTexture_tphq6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxlxy"]
+albedo_color = Color(0.65098, 0, 0.0117647, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ca18n"]
+material = SubResource("StandardMaterial3D_mxlxy")
+
+[node name="BoosMonsterCharacter" type="CharacterBody3D"]
+script = ExtResource("1_s2mhk")
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:_"]
+
+[node name="Ambient" type="Node3D" parent="."]
+transform = Transform3D(0.304283, 2.69525e-07, 2.22701, -3.58841, -1.0781e-06, 0.188841, 6.43961e-07, -4.52188, 0, -13.82, 1.32, 0)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2071442369", "65d122339d874b44da6cca6ef5ddf1c0:2071442366", "65d122339d874b44da6cca6ef5ddf1c0:2071442368", "65d122339d874b44da6cca6ef5ddf1c0:2071442367"]
+
+[node name="Demonboss" type="Node3D" parent="."]
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:341435682", "65d122339d874b44da6cca6ef5ddf1c0:341435681", "65d122339d874b44da6cca6ef5ddf1c0:341435684", "65d122339d874b44da6cca6ef5ddf1c0:341435683"]
+
+[node name="DemonBoss" type="Node3D" parent="Demonboss"]
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1705028071", "65d122339d874b44da6cca6ef5ddf1c0:1705028068", "65d122339d874b44da6cca6ef5ddf1c0:1705028069"]
+
+[node name="Devil1_Reference" type="Node3D" parent="Demonboss/DemonBoss"]
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:407622368", "65d122339d874b44da6cca6ef5ddf1c0:407622367"]
+
+[node name="Devil1_Hips" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference"]
+transform = Transform3D(0.00700647, -0.058464, 0.998265, 0.99234, -0.12272, -0.0141521, 0.123334, 0.990718, 0.0571564, 0.0076232, 2.09562, -0.0138422)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1590574508", "65d122339d874b44da6cca6ef5ddf1c0:1590574507"]
+
+[node name="Devil1_LeftUpLeg" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips"]
+transform = Transform3D(-0.716642, -0.665725, 0.207927, 0.683624, -0.72955, 0.0203623, 0.138138, 0.156736, 0.977932, -0.113929, -0.0853425, 0.556394)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2293604", "65d122339d874b44da6cca6ef5ddf1c0:2293603"]
+
+[node name="Devil1_LeftLeg" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_LeftUpLeg"]
+transform = Transform3D(-0.00128734, -0.999432, -0.033677, 0.999999, -0.00128639, -4.94923e-05, 6.14114e-06, -0.033677, 0.999433, 1.19448, 1.84291e-05, 5.15098e-06)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1010535353", "65d122339d874b44da6cca6ef5ddf1c0:1010535352"]
+
+[node name="Devil1_LeftFoot" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_LeftUpLeg/Devil1_LeftLeg"]
+transform = Transform3D(-0.702311, 0.674296, 0.228218, -0.705065, -0.703103, -0.0923483, 0.098191, -0.225766, 0.969221, 1.30216, 2.64096e-07, -1.4756e-07)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:494626587", "65d122339d874b44da6cca6ef5ddf1c0:494626586"]
+
+[node name="Devil1_LeftToeBase" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_LeftUpLeg/Devil1_LeftLeg/Devil1_LeftFoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.670697, 1.54817e-08, 3.97748e-07)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1186140221", "65d122339d874b44da6cca6ef5ddf1c0:1186140220"]
+
+[node name="Devil1_RightUpLeg" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips"]
+transform = Transform3D(0.641473, 0.733289, -0.225389, -0.752462, 0.658635, 0.00126961, 0.14938, 0.168782, 0.974268, -0.113929, -0.0853424, -0.556394)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:873535131", "65d122339d874b44da6cca6ef5ddf1c0:873535130"]
+
+[node name="Devil1_RightLeg" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_RightUpLeg"]
+transform = Transform3D(-0.0484377, -0.995026, 0.0870452, 0.998826, -0.0482528, 0.0042275, -6.30692e-06, 0.0871478, 0.996195, -1.19448, -4.91375e-06, -2.62996e-06)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:693179908", "65d122339d874b44da6cca6ef5ddf1c0:693179907"]
+
+[node name="Devil1_RightFoot" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_RightUpLeg/Devil1_RightLeg"]
+transform = Transform3D(-0.694561, 0.708414, 0.125441, -0.719432, -0.684385, -0.11847, 0.00192389, -0.172531, 0.985002, -1.30216, -7.40281e-07, 1.40344e-07)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1140001821", "65d122339d874b44da6cca6ef5ddf1c0:1140001820"]
+
+[node name="Devil1_RightToeBase" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_RightUpLeg/Devil1_RightLeg/Devil1_RightFoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.670696, 4.66591e-09, -2.26365e-07)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1230467317", "65d122339d874b44da6cca6ef5ddf1c0:1230467316"]
+
+[node name="Devil1_Spine" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips"]
+transform = Transform3D(0.99944, -0.0333965, -0.00207051, 0.0334241, 0.999326, 0.015169, 0.00156252, -0.0152297, 0.999883, 0.514068, 5.78548e-08, 4.31207e-09)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1297744108", "65d122339d874b44da6cca6ef5ddf1c0:1297744107"]
+
+[node name="Devil1_Spine1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine"]
+transform = Transform3D(0.77847, -0.627595, -0.0104511, 0.621878, 0.768906, 0.148494, -0.0851581, -0.122097, 0.988858, 0.647785, -9.42573e-08, -1.16863e-07)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:584651308", "65d122339d874b44da6cca6ef5ddf1c0:584651307"]
+
+[node name="Devil1_LeftShoulder" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1"]
+transform = Transform3D(-0.941208, 0.336461, -0.030354, -0.266228, -0.683416, 0.679753, 0.207966, 0.64787, 0.732813, 1.17756, -0.735458, 0.999431)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1052148490", "65d122339d874b44da6cca6ef5ddf1c0:1052148489"]
+
+[node name="Devil1_LeftArm" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder"]
+transform = Transform3D(0.703199, -0.701707, 0.114536, -0.0340996, -0.194192, -0.980371, 0.710175, 0.68549, -0.160484, 0.614387, 3.05399e-09, -2.59095e-08)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2047852757", "65d122339d874b44da6cca6ef5ddf1c0:2047852756"]
+
+[node name="Devil1_LeftForeArm" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm"]
+transform = Transform3D(0.541732, -0.840551, -0.000271829, 0.840551, 0.541732, 2.71861e-06, 0.000144973, -0.000229959, 1, 1.44107, 1.25018e-06, -6.00471e-06)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:888894178", "65d122339d874b44da6cca6ef5ddf1c0:888894177"]
+
+[node name="Devil1_LeftHand" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm"]
+transform = Transform3D(1, 0, 0, 0, 0.998456, -0.0555548, 0, 0.0555548, 0.998456, 1.29207, 7.89356e-08, -3.71093e-09)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1730116994", "65d122339d874b44da6cca6ef5ddf1c0:1730116993"]
+
+[node name="Devil1_LeftHand1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand"]
+transform = Transform3D(-0.0794109, -2.44543e-16, -0.996842, -9.72504e-18, 1, -2.44543e-16, 0.996842, -9.72502e-18, -0.0794109, 1.22225, -0.0449807, -0.206911)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1185962414", "65d122339d874b44da6cca6ef5ddf1c0:1185962413"]
+
+[node name="transform5" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62448, 0.0449807, 0.20691)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:936324773", "65d122339d874b44da6cca6ef5ddf1c0:936324772"]
+
+[node name="Devil1_LeftHand2" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand1/transform5"]
+transform = Transform3D(0.53368, 0, -0.845687, 0, 1, 0, 0.845687, 0, 0.53368, 2.98733, -0.0449807, -0.20691)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1674972216", "65d122339d874b44da6cca6ef5ddf1c0:1674972215"]
+
+[node name="transform4" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand1/transform5/Devil1_LeftHand2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98734, 0.0449807, 0.20691)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1117545049", "65d122339d874b44da6cca6ef5ddf1c0:1117545048"]
+
+[node name="Devil1_LeftHand3" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand1/transform5/Devil1_LeftHand2/transform4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41845, -0.0449807, -0.160091)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1630668688", "65d122339d874b44da6cca6ef5ddf1c0:1630668687"]
+
+[node name="Devil1_LeftHand6" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand"]
+transform = Transform3D(-0.0794109, -2.44543e-16, -0.996842, -9.72504e-18, 1, -2.44543e-16, 0.996842, -9.72502e-18, -0.0794109, 1.22225, 0.268303, -0.100686)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2111120155", "65d122339d874b44da6cca6ef5ddf1c0:2111120154"]
+
+[node name="transform3 1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62448, -0.268303, 0.100685)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:834802978", "65d122339d874b44da6cca6ef5ddf1c0:834802977"]
+
+[node name="Devil1_LeftHand5 1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand6/transform3 1"]
+transform = Transform3D(0.387374, 0.252393, -0.886701, -0.185368, 0.963477, 0.193265, 0.903095, 0.0895008, 0.420011, 2.98733, 0.268303, -0.100685)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1299045382", "65d122339d874b44da6cca6ef5ddf1c0:1299045381"]
+
+[node name="transform2 1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand6/transform3 1/Devil1_LeftHand5 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98734, -0.268303, 0.100685)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1496885376", "65d122339d874b44da6cca6ef5ddf1c0:1496885375"]
+
+[node name="Devil1_LeftHand4 1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand6/transform3 1/Devil1_LeftHand5 1/transform2 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41845, 0.268303, -0.0538661)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1291856745", "65d122339d874b44da6cca6ef5ddf1c0:1291856744"]
+
+[node name="Devil1_LeftHand9" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand"]
+transform = Transform3D(-0.507673, -2.27974e-16, -0.86155, -6.2172e-17, 1, -2.27974e-16, 0.86155, -6.2172e-17, -0.507673, 1.22225, -0.375729, -0.0920236)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:47170459", "65d122339d874b44da6cca6ef5ddf1c0:47170458"]
+
+[node name="transform7" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62448, 0.375729, 0.092023)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:91367012", "65d122339d874b44da6cca6ef5ddf1c0:91367011"]
+
+[node name="Devil1_LeftHand8" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand9/transform7"]
+transform = Transform3D(0.714617, 0, -0.699516, 0, 1, 0, 0.699516, 0, 0.714617, 2.98733, -0.375729, -0.092023)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1968975378", "65d122339d874b44da6cca6ef5ddf1c0:1968975377"]
+
+[node name="transform6" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand9/transform7/Devil1_LeftHand8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98734, 0.375729, 0.092023)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2080796868", "65d122339d874b44da6cca6ef5ddf1c0:2080796867"]
+
+[node name="Devil1_LeftHand7" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand9/transform7/Devil1_LeftHand8/transform6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41845, -0.375729, -0.0452042)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:927338393", "65d122339d874b44da6cca6ef5ddf1c0:927338392"]
+
+[node name="Devil1_LeftHand10" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand"]
+transform = Transform3D(0.924709, -0.097954, -0.367855, 0.178832, 0.96484, 0.192623, 0.336053, -0.243904, 0.909714, 0.265838, 0.382549, 0.150408)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:643481746", "65d122339d874b44da6cca6ef5ddf1c0:643481745"]
+
+[node name="transform3" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62448, -0.268303, 0.100685)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:566559441", "65d122339d874b44da6cca6ef5ddf1c0:566559440"]
+
+[node name="Devil1_LeftHand5" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand10/transform3"]
+transform = Transform3D(0.14071, 0.990051, 0, -0.990051, 0.14071, 0, 0, 0, 1, 2.98734, 0.268303, -0.100685)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:14248530", "65d122339d874b44da6cca6ef5ddf1c0:14248529"]
+
+[node name="transform2" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand10/transform3/Devil1_LeftHand5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98734, -0.268303, 0.100685)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2059236885", "65d122339d874b44da6cca6ef5ddf1c0:2059236884"]
+
+[node name="Devil1_LeftHand4" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_LeftShoulder/Devil1_LeftArm/Devil1_LeftForeArm/Devil1_LeftHand/Devil1_LeftHand10/transform3/Devil1_LeftHand5/transform2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.41845, 0.268303, -0.0538662)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1210709560", "65d122339d874b44da6cca6ef5ddf1c0:1210709559"]
+
+[node name="Devil1_Neck" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1"]
+transform = Transform3D(0.497669, -0.864341, -0.0723888, 0.864325, 0.501177, -0.0420019, 0.0725835, -0.0416644, 0.996492, 1.17638, 9.746e-08, -9.82337e-07)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:483896656", "65d122339d874b44da6cca6ef5ddf1c0:483896655"]
+
+[node name="Devil1_Head" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_Neck"]
+transform = Transform3D(0.997411, 0.0127633, -0.0707663, -0.0108842, 0.999579, 0.0268767, 0.0710796, -0.0260369, 0.997131, 0.468405, -3.92532e-07, -1.69559e-07)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1840440720", "65d122339d874b44da6cca6ef5ddf1c0:1840440719"]
+
+[node name="Devil1_RightShoulder" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1"]
+transform = Transform3D(0.678256, -0.020303, -0.734545, -0.571558, 0.613677, -0.544721, 0.461833, 0.789296, 0.404626, 1.19723, -0.735458, -0.975781)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1696262026", "65d122339d874b44da6cca6ef5ddf1c0:1696262025"]
+
+[node name="Devil1_RightArm" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder"]
+transform = Transform3D(0.996595, 0.0320487, 0.0759686, 0.0800566, -0.596596, -0.798539, 0.0197304, 0.801902, -0.59713, -0.614387, 3.09778e-07, 2.31734e-07)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:121270801", "65d122339d874b44da6cca6ef5ddf1c0:121270800"]
+
+[node name="Devil1_RightForeArm" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm"]
+transform = Transform3D(0.732069, -0.681214, 0.00479914, 0.681222, 0.732077, -6.13369e-06, -0.00350916, 0.00327377, 0.999989, -1.44107, -1.61984e-07, 6.20484e-08)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:442329384", "65d122339d874b44da6cca6ef5ddf1c0:442329383"]
+
+[node name="Devil1_RightHand" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.0794e-06, 0, 1.0794e-06, 1, -1.29207, -4.89848e-07, -6.54604e-08)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:252769804", "65d122339d874b44da6cca6ef5ddf1c0:252769803"]
+
+[node name="Devil1_RightHand11" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand"]
+transform = Transform3D(0.789898, 0.00863717, -0.613178, -0.0115371, 0.999933, -0.000777165, 0.61313, 0.00768818, 0.789944, -1.10036, 0.0544939, 0.250974)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1052479290", "65d122339d874b44da6cca6ef5ddf1c0:1052479289"]
+
+[node name="transform8" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6245, -0.04498, -0.20692)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1298792975", "65d122339d874b44da6cca6ef5ddf1c0:1298792974"]
+
+[node name="Devil1_RightHand12" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand11/transform8"]
+transform = Transform3D(-0.0492078, -2.44781e-16, -0.998789, -6.02622e-18, 1, -2.44781e-16, 0.998789, -6.02622e-18, -0.0492078, -2.8332, 0.0917901, 0.0508969)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1441273369", "65d122339d874b44da6cca6ef5ddf1c0:1441273368"]
+
+[node name="transform9" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand11/transform8/Devil1_RightHand12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98734, -0.04498, -0.20692)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1115581570", "65d122339d874b44da6cca6ef5ddf1c0:1115581569"]
+
+[node name="Devil1_RightHand13" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand11/transform8/Devil1_RightHand12/transform9"]
+transform = Transform3D(0.453709, 0, -0.89115, 0, 1, 0, 0.89115, 0, 0.453709, -3.32518, 0.0354859, 0.144983)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1301792445", "65d122339d874b44da6cca6ef5ddf1c0:1301792444"]
+
+[node name="Devil1_RightHand14" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand"]
+transform = Transform3D(0.187238, 0.00863717, -0.982277, -0.0091697, 0.999933, 0.00704453, 0.982272, 0.00768818, 0.187305, -1.10128, 0.386135, 0.138682)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1199307824", "65d122339d874b44da6cca6ef5ddf1c0:1199307823"]
+
+[node name="transform10" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6245, -0.375728, -0.09202)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1364777766", "65d122339d874b44da6cca6ef5ddf1c0:1364777765"]
+
+[node name="Devil1_RightHand15" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand14/transform10"]
+transform = Transform3D(0.271845, 0, -0.962341, 0, 1, 0, 0.962341, 0, 0.271845, -2.8332, 0.422538, -0.0640031)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1867253083", "65d122339d874b44da6cca6ef5ddf1c0:1867253082"]
+
+[node name="transform11" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand14/transform10/Devil1_RightHand15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98734, -0.375728, -0.09202)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:314770617", "65d122339d874b44da6cca6ef5ddf1c0:314770616"]
+
+[node name="Devil1_RightHand16" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand14/transform10/Devil1_RightHand15/transform11"]
+transform = Transform3D(0.403427, 0, -0.915012, 0, 1, 0, 0.915012, 0, 0.403427, -3.33426, 0.365754, -0.00740632)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:875839530", "65d122339d874b44da6cca6ef5ddf1c0:875839529"]
+
+[node name="Devil1_RightHand17" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand"]
+transform = Transform3D(0.187238, 0.00863717, -0.982277, -0.0091697, 0.999933, 0.00704453, 0.982272, 0.00768818, 0.187305, -1.10655, -0.257923, 0.142386)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:916525440", "65d122339d874b44da6cca6ef5ddf1c0:916525439"]
+
+[node name="transform12" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6245, 0.268304, -0.10068)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:473704908", "65d122339d874b44da6cca6ef5ddf1c0:473704907"]
+
+[node name="Devil1_RightHand18" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand17/transform12"]
+transform = Transform3D(0.331332, 0, -0.943514, 0, 1, 0, 0.943514, 0, 0.331332, -2.84063, -0.223749, -0.0478272)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1799987989", "65d122339d874b44da6cca6ef5ddf1c0:1799987988"]
+
+[node name="transform13" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand17/transform12/Devil1_RightHand18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98734, 0.268304, -0.10068)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:143741123", "65d122339d874b44da6cca6ef5ddf1c0:143741122"]
+
+[node name="Devil1_RightHand19" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand17/transform12/Devil1_RightHand18/transform13"]
+transform = Transform3D(0.453709, 0, -0.89115, 0, 1, 0, 0.89115, 0, 0.453709, -3.33832, -0.277798, 0.00378779)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:957510848", "65d122339d874b44da6cca6ef5ddf1c0:957510847"]
+
+[node name="Devil1_RightHand20" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand"]
+transform = Transform3D(0.839315, -0.0154051, -0.543427, -0.210544, 0.91238, -0.351047, 0.50122, 0.409054, 0.762531, -0.296433, -0.248528, -0.206722)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:267324836", "65d122339d874b44da6cca6ef5ddf1c0:267324835"]
+
+[node name="transform12 1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6245, 0.268304, -0.10068)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2117312782", "65d122339d874b44da6cca6ef5ddf1c0:2117312781"]
+
+[node name="Devil1_RightHand18 1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand20/transform12 1"]
+transform = Transform3D(0.470385, 0.657799, -0.58825, -0.869403, 0.459693, -0.181162, 0.151246, 0.596643, 0.788126, -2.98734, -0.268304, 0.10068)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1991831903", "65d122339d874b44da6cca6ef5ddf1c0:1991831902"]
+
+[node name="transform13 1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand20/transform12 1/Devil1_RightHand18 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98734, 0.268304, -0.10068)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:995210051", "65d122339d874b44da6cca6ef5ddf1c0:995210050"]
+
+[node name="Devil1_RightHand19 1" type="Node3D" parent="Demonboss/DemonBoss/Devil1_Reference/Devil1_Hips/Devil1_Spine/Devil1_Spine1/Devil1_RightShoulder/Devil1_RightArm/Devil1_RightForeArm/Devil1_RightHand/Devil1_RightHand20/transform12 1/Devil1_RightHand18 1/transform13 1"]
+transform = Transform3D(0.952579, 0.264424, -0.150576, -0.290617, 0.937253, -0.192612, 0.0901965, 0.227238, 0.969653, -3.41846, -0.268304, 0.05386)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:618315495", "65d122339d874b44da6cca6ef5ddf1c0:618315494"]
+
+[node name="QuickRigCharacter_Guides" type="Node3D" parent="Demonboss/DemonBoss"]
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1076434266", "65d122339d874b44da6cca6ef5ddf1c0:1076434265"]
+
+[node name="Head" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117148, 5.08452, 0.919908)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:795625736", "65d122339d874b44da6cca6ef5ddf1c0:795625735"]
+
+[node name="Hips" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.83645, 0)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2004684067", "65d122339d874b44da6cca6ef5ddf1c0:2004684066"]
+
+[node name="LeftArm" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60204, 5.3771, -0.223343)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:2125677711", "65d122339d874b44da6cca6ef5ddf1c0:2125677710"]
+
+[node name="LeftFoot" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.570775, 0.305843, -0.0531674)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1823499089", "65d122339d874b44da6cca6ef5ddf1c0:1823499088"]
+
+[node name="LeftForeArm" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03674, 5.49922, -0.281601)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1184090954", "65d122339d874b44da6cca6ef5ddf1c0:1184090953"]
+
+[node name="LeftHand" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.32814, 5.4593, -0.270002)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1795967340", "65d122339d874b44da6cca6ef5ddf1c0:1795967339"]
+
+[node name="LeftLeg" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544958, 1.57384, 0.242016)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1670259700", "65d122339d874b44da6cca6ef5ddf1c0:1670259699"]
+
+[node name="LeftShoulder" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.987655, 5.3771, -0.223343)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1069726051", "65d122339d874b44da6cca6ef5ddf1c0:1069726050"]
+
+[node name="LeftToeBase" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.791771, 0.215584, 0.573607)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1138613743", "65d122339d874b44da6cca6ef5ddf1c0:1138613742"]
+
+[node name="LeftUpLeg" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556394, 2.72253, -0.0853424)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1512723478", "65d122339d874b44da6cca6ef5ddf1c0:1512723477"]
+
+[node name="Neck" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117148, 5.08452, 0.451505)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:100347237", "65d122339d874b44da6cca6ef5ddf1c0:100347236"]
+
+[node name="Reference" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117148, -0.0620581, 0.0572713)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:438095865", "65d122339d874b44da6cca6ef5ddf1c0:438095864"]
+
+[node name="RightArm" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60204, 5.3771, -0.223343)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1577647315", "65d122339d874b44da6cca6ef5ddf1c0:1577647314"]
+
+[node name="RightFoot" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.570775, 0.305843, -0.0531674)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1719091002", "65d122339d874b44da6cca6ef5ddf1c0:1719091001"]
+
+[node name="RightForeArm" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03674, 5.49922, -0.281601)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:246561111", "65d122339d874b44da6cca6ef5ddf1c0:246561110"]
+
+[node name="RightHand" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32814, 5.4593, -0.270002)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1129377796", "65d122339d874b44da6cca6ef5ddf1c0:1129377795"]
+
+[node name="RightLeg" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544958, 1.57384, 0.242016)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:256307262", "65d122339d874b44da6cca6ef5ddf1c0:256307261"]
+
+[node name="RightShoulder" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.987655, 5.3771, -0.223343)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:632926868", "65d122339d874b44da6cca6ef5ddf1c0:632926867"]
+
+[node name="RightToeBase" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.791771, 0.215584, 0.573607)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:580773458", "65d122339d874b44da6cca6ef5ddf1c0:580773457"]
+
+[node name="RightUpLeg" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.556394, 2.72253, -0.0853424)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1573004062", "65d122339d874b44da6cca6ef5ddf1c0:1573004061"]
+
+[node name="Spine" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35052, 0)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1078805259", "65d122339d874b44da6cca6ef5ddf1c0:1078805258"]
+
+[node name="Spine1" type="Node3D" parent="Demonboss/DemonBoss/QuickRigCharacter_Guides"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.99831, 0)
+metadata/ufile_ids = ["65d122339d874b44da6cca6ef5ddf1c0:1144550259", "65d122339d874b44da6cca6ef5ddf1c0:1144550258"]
+
+[node name="LeftHandColider" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ig7us")
+disabled = true
+
+[node name="HeadColider" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_tmpl2")
+disabled = true
+
+[node name="RightHandColider" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_qua4p")
+disabled = true
+
+[node name="LegsColider" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_b5lnc")
+disabled = true
+
+[node name="_mesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = ExtResource("2_abh67")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_2spt4")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="zombieDiesSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_erwgo")
+pitch_scale = 0.34
+
+[node name="kraujas" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11219, 0)
+transparency = 0.05
+visibility_range_end = 200.0
+emitting = false
+amount = 50
+lifetime = 0.02
+one_shot = true
+explosiveness = 1.0
+collision_base_size = 1.0
+visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
+process_material = SubResource("ParticleProcessMaterial_lkfmn")
+draw_pass_1 = SubResource("SphereMesh_ca18n")
+
+[node name="kraujas2" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11219, 0)
+transparency = 0.05
+visibility_range_end = 200.0
+emitting = false
+amount = 50
+lifetime = 0.02
+one_shot = true
+explosiveness = 1.0
+collision_base_size = 1.0
+visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
+process_material = SubResource("ParticleProcessMaterial_lkfmn")
+draw_pass_1 = SubResource("SphereMesh_ca18n")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 42.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -5,6 +5,7 @@ var mouse_relative_x = 0
 var mouse_relative_y = 0
 const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var ugnis=1
  
 @onready var anim_player = $AnimationPlayer
 @onready var raycast = $Camera3D/RayCast3D
@@ -31,7 +32,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle Jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	# Handle Shooting
@@ -64,6 +64,12 @@ func kill():
 func shoot():	
 	gunshot.play()
 	anim_player.play("shootAnimation")
+	if ugnis == 1:
+		$CanvasLayer/Control/ugnis1.emitting = true
+		ugnis=2
+	else:
+		$CanvasLayer/Control/ugnis2.emitting = true
+		ugnis=1
 	var coll = raycast.get_collider()
 	if raycast.is_colliding():
 		var bulletInst = _bullet_scene.instantiate() as Node3D
@@ -76,6 +82,6 @@ func shoot():
 		if coll.has_method("kill"):
 			coll.kill()
 			killCount = killCount + 1
-	if killCount == 8:
+	if killCount == 42:
 		anim_player.play("win")
 		sprite.visible = true

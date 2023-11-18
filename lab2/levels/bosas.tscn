@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=3 uid="uid://4kp7ak732q8n"]
+
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_qfhcc"]
+[ext_resource type="AudioStream" uid="uid://bbrjaloumrj3k" path="res://sounds/Minecraft Zombie hit - Sound effect (HD).mp3" id="2_p2y63"]
+[ext_resource type="PackedScene" path="res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo.tscn" id="3_pxax6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3u5ou"]
+radius = 0.683059
+
+[sub_resource type="Curve" id="Curve_1nhsx"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_m6qfe"]
+curve = SubResource("Curve_1nhsx")
+
+[sub_resource type="Gradient" id="Gradient_5uocj"]
+offsets = PackedFloat32Array(0.0938776, 0.273469, 0.653061)
+colors = PackedColorArray(0, 0, 0, 1, 0.0392157, 0.0392157, 0.0392157, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cpl81"]
+gradient = SubResource("Gradient_5uocj")
+
+[sub_resource type="Gradient" id="Gradient_2gqhd"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4qgrx"]
+gradient = SubResource("Gradient_2gqhd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m05ad"]
+spread = 180.0
+gravity = Vector3(0, -50, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 15.0
+angular_velocity_curve = SubResource("CurveTexture_m6qfe")
+linear_accel_min = -100.0
+scale_min = 0.1
+scale_max = 0.2
+color = Color(0.862745, 0, 0.0156863, 1)
+color_ramp = SubResource("GradientTexture1D_4qgrx")
+color_initial_ramp = SubResource("GradientTexture1D_cpl81")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxlxy"]
+albedo_color = Color(0.65098, 0, 0.0117647, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_mgvac"]
+material = SubResource("StandardMaterial3D_mxlxy")
+
+[node name="Bosas" type="CharacterBody3D"]
+script = ExtResource("1_qfhcc")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 1.74846e-07, 0, -1.74846e-07, 1, 0.00222433, 0, 0)
+shape = SubResource("CapsuleShape3D_3u5ou")
+
+[node name="zombieDiesSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_p2y63")
+pitch_scale = 0.34
+
+[node name="kraujas" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.280862, 0)
+transparency = 0.05
+visibility_range_end = 200.0
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 0.6
+collision_base_size = 1.0
+visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
+process_material = SubResource("ParticleProcessMaterial_m05ad")
+draw_pass_1 = SubResource("SphereMesh_mgvac")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+autostart = true
+
+[node name="Demo" parent="." instance=ExtResource("3_pxax6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.390586, 0.0434936, 0.561913)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout" flags=18]

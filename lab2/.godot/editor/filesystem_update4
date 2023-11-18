@@ -1,10 +1,9 @@
-res://character_body_3d.tscn
-res://Scenes/Player/player.tscn
-res://muzika.tscn
+res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.tscn
+res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.gd
 res://levels/node_3d.tscn
+res://character_body_3d.tscn
 res://zaidejasKlonas.tscn
+res://levels/fonine_muzika.tscn
 res://levels/CharacterBody3D.gd
 res://character_body_3d.gd
-res://Scenes/Player/player.gd
-res://Scenes/Player/Timer.gd
-res://levels/fonine_muzika.tscn
+res://levels/node_3d.gd

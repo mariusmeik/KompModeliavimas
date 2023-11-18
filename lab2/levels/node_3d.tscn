@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctahsvj88g1om"]
+[gd_scene load_steps=12 format=3 uid="uid://ctahsvj88g1om"]
 
 [ext_resource type="PackedScene" uid="uid://bywnyah8p4lfa" path="res://character_body_3d.tscn" id="1_3luqj"]
+[ext_resource type="Script" path="res://levels/node_3d.gd" id="1_lb17d"]
 [ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="1_ujgwk"]
 [ext_resource type="Texture2D" uid="uid://cgp4mvev1cbra" path="res://addons/devblocks/textures/purple/texture_01.png" id="3_m1rsk"]
 [ext_resource type="PackedScene" uid="uid://cgqccf78ujs2n" path="res://zaidejasKlonas.tscn" id="4_v63bn"]
 [ext_resource type="PackedScene" uid="uid://bh70ycqgn0vt5" path="res://levels/fonine_muzika.tscn" id="5_5eail"]
+[ext_resource type="PackedScene" uid="uid://df8rfc1sgpu0w" path="res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.tscn" id="6_qqj4r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6g5uc"]
 
@@ -22,6 +24,7 @@ uv1_scale = Vector3(3, 3, 3)
 uv1_triplanar = true
 
 [node name="Node3d" type="Node3D"]
+script = ExtResource("1_lb17d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_l5pxq")
@@ -65,27 +68,80 @@ block_style = 2
 [node name="Player" parent="." instance=ExtResource("4_v63bn")]
 
 [node name="zombie" parent="." instance=ExtResource("1_3luqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5788, 0, 30.5704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5788, 6.76509, 30.5704)
 
 [node name="zombie2" parent="." instance=ExtResource("1_3luqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.09425, 0, 20.4031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.09425, 4.26818, 20.4031)
 
 [node name="zombie3" parent="." instance=ExtResource("1_3luqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.45974, 0, -32.4919)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.45974, 8.51461, -32.4919)
 
 [node name="zombie4" parent="." instance=ExtResource("1_3luqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7392, 0, -27.777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7392, 10.7552, -27.777)
 
 [node name="zombie5" parent="." instance=ExtResource("1_3luqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88101, 0, 21.8036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88101, 2.61679, 21.8036)
 
 [node name="zombie6" parent="." instance=ExtResource("1_3luqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4066, 0, 7.1192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4066, 7.90777, 7.1192)
 
 [node name="zombie7" parent="." instance=ExtResource("1_3luqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5909, 0, -0.956803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5909, 14.3799, -0.956803)
 
 [node name="zombie8" parent="." instance=ExtResource("1_3luqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0538, 0, -10.1537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0538, 7.28667, -10.1537)
 
 [node name="fonineMuzika" parent="." instance=ExtResource("5_5eail")]
+
+[node name="BoosMonsterCharacter" parent="." instance=ExtResource("6_qqj4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4184, 11.7012, -24.6127)
+
+[node name="zombie9" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1926, 13.2581, -0.463051)
+
+[node name="zombie10" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3094, 7.48691, 39.2445)
+
+[node name="zombie11" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.4137, 6.79418, 43.8346)
+
+[node name="zombie12" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4433, 10.518, -40.3951)
+
+[node name="zombie13" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1509, 6.64176, -0.942802)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="zombie14" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.2629, 19.8082, -35.95)
+
+[node name="zombie15" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.41, 39.6163, -48.0046)
+
+[node name="zombie16" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1756, 59.4245, -26.5237)
+
+[node name="zombie17" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3625, 79.2327, -16.5924)
+
+[node name="zombie18" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.0177, 178.274, -29.7776)
+
+[node name="zombie19" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2831, 158.465, -6.71243)
+
+[node name="zombie20" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4749, 138.657, 31.8145)
+
+[node name="zombie21" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.86154, 118.849, 31.9214)
+
+[node name="zombie22" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.404, 99.0409, -10.8224)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

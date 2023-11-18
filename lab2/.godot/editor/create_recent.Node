@@ -1,5 +1,9 @@
-AudioStreamPlayer
 Timer
+GPUParticles2D
+CharacterBody3D
+CollisionShape3D
+RigidBody3D
+AudioStreamPlayer
 GPUParticles3D
 AudioStreamPlayer3D
 Sprite2D
@@ -10,8 +14,6 @@ Node3D
 AnimatedSprite3D
 AnimationPlayer
 RayCast3D
-CollisionShape3D
-CharacterBody3D
 TextureRect
 Control
 CanvasLayer

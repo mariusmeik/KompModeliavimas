@@ -10,7 +10,7 @@ const JUMP_VELOCITY = 8
 @onready var timer = $Timer
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
- 
+@export var isStuck = false
 var player = null
 var dead = false
  
@@ -35,8 +35,8 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, MOVE_SPEED)
 		velocity.z = move_toward(velocity.z, 0, MOVE_SPEED)
-
-	move_and_slide()
+	if !isStuck:
+		move_and_slide()
  
 	if raycast.is_colliding():
 		var coll = raycast.get_collider()
