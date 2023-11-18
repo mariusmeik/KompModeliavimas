@@ -1,6 +1,7 @@
+AudioStreamPlayer
+Timer
 GPUParticles3D
 AudioStreamPlayer3D
-AudioStreamPlayer
 Sprite2D
 Sprite3D
 Camera2D

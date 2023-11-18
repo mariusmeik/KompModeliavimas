@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh70ycqgn0vt5"]
+
+[ext_resource type="AudioStream" uid="uid://df0s2x8mv50t0" path="res://sounds/The only thing they fear is you (With opening monologue).mp3" id="1_81t08"]
+
+[node name="fonineMuzika" type="AudioStreamPlayer"]
+stream = ExtResource("1_81t08")
+volume_db = -10.883
+autoplay = true

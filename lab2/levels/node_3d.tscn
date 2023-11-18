@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctahsvj88g1om"]
+[gd_scene load_steps=10 format=3 uid="uid://ctahsvj88g1om"]
 
-[ext_resource type="PackedScene" uid="uid://7gv6q50fuutj" path="res://Scenes/Player/player.tscn" id="1_eisjc"]
+[ext_resource type="PackedScene" uid="uid://bywnyah8p4lfa" path="res://character_body_3d.tscn" id="1_3luqj"]
 [ext_resource type="PackedScene" uid="uid://dj26sacnhty4r" path="res://addons/devblocks/blocks/basic_block.tscn" id="1_ujgwk"]
 [ext_resource type="Texture2D" uid="uid://cgp4mvev1cbra" path="res://addons/devblocks/textures/purple/texture_01.png" id="3_m1rsk"]
+[ext_resource type="PackedScene" uid="uid://cgqccf78ujs2n" path="res://zaidejasKlonas.tscn" id="4_v63bn"]
+[ext_resource type="PackedScene" uid="uid://bh70ycqgn0vt5" path="res://levels/fonine_muzika.tscn" id="5_5eail"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6g5uc"]
 
@@ -28,9 +30,6 @@ environment = SubResource("Environment_l5pxq")
 transform = Transform3D(9.10803, 0, 0, 0, 1, 0, 0, 0, 9, 6.49497, 2.07954, -31.5179)
 block_color_group = 1
 block_style = 2
-
-[node name="Player" parent="." instance=ExtResource("1_eisjc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.966349, 0.250904, -0.0567091, 0.182362, -0.512743, 0.838951, 0.181419, -0.821061, -0.541244, -0.00693703, 59.5145, -109.348)
@@ -62,3 +61,31 @@ material = SubResource("StandardMaterial3D_2gtf0")
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, -13.0662, 2.84246, -1.36987)
 block_color_group = 1
 block_style = 2
+
+[node name="Player" parent="." instance=ExtResource("4_v63bn")]
+
+[node name="zombie" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5788, 0, 30.5704)
+
+[node name="zombie2" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.09425, 0, 20.4031)
+
+[node name="zombie3" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.45974, 0, -32.4919)
+
+[node name="zombie4" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7392, 0, -27.777)
+
+[node name="zombie5" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.88101, 0, 21.8036)
+
+[node name="zombie6" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4066, 0, 7.1192)
+
+[node name="zombie7" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5909, 0, -0.956803)
+
+[node name="zombie8" parent="." instance=ExtResource("1_3luqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0538, 0, -10.1537)
+
+[node name="fonineMuzika" parent="." instance=ExtResource("5_5eail")]
