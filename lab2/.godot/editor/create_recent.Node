@@ -1,4 +1,6 @@
+Label
 Timer
+Control
 GPUParticles2D
 CharacterBody3D
 CollisionShape3D
@@ -15,5 +17,4 @@ AnimatedSprite3D
 AnimationPlayer
 RayCast3D
 TextureRect
-Control
 CanvasLayer

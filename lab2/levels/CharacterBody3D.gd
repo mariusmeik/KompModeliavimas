@@ -6,7 +6,8 @@ var mouse_relative_y = 0
 const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var ugnis=1
- 
+var seconds=0
+var minutes=0
 @onready var anim_player = $AnimationPlayer
 @onready var raycast = $Camera3D/RayCast3D
 @onready var sprite = $CanvasLayer/Control/victory
@@ -17,6 +18,7 @@ var ugnis=1
 var killCount = 0
  
 func _ready():
+	Reset_Timer()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	await get_tree().process_frame
 	get_tree().call_group("zombies", "set_player", self)
@@ -85,3 +87,17 @@ func shoot():
 	if killCount == 42:
 		anim_player.play("win")
 		sprite.visible = true
+		$GameFinnishTimer.stop()
+
+
+func _on_game_finnish_timer_timeout():
+	if(seconds >= 60):
+		minutes = minutes + 1
+		seconds = seconds - 60
+	else:
+		seconds = seconds + 1
+	$TimerLabel.text = str(minutes) + "m : " + str(seconds) + "s"
+	
+func Reset_Timer():
+	seconds=0
+	minutes=0

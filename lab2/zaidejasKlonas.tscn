@@ -198,3 +198,13 @@ texture = ExtResource("3_qn17l")
 stream = ExtResource("5_nb4to")
 volume_db = -18.294
 pitch_scale = 1.43
+
+[node name="GameFinnishTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 1006.0
+offset_right = 1148.0
+offset_bottom = 39.0
+
+[connection signal="timeout" from="GameFinnishTimer" to="." method="_on_game_finnish_timer_timeout"]
