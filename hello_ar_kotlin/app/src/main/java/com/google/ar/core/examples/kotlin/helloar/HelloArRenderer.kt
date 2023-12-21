@@ -107,7 +107,10 @@ class HelloArRenderer(val activity: HelloArActivity) :
   var lastPointCloudTimestamp: Long = 0
 
   // Virtual object (ARCore pawn)
-  lateinit var virtualObjectMesh: Mesh
+  private var virtualObjectMesh: MutableList<Mesh> = mutableListOf()
+  private var virtualObjectMeshNamesList: MutableList<String> = mutableListOf()
+  private var virtualObjectMeshCount = 0
+  private var currentIndex = 0
   lateinit var virtualObjectShader: Shader
   lateinit var virtualObjectAlbedoTexture: Texture
   lateinit var virtualObjectAlbedoInstantPlacementTexture: Texture
@@ -231,11 +234,16 @@ class HelloArRenderer(val activity: HelloArActivity) :
           Texture.ColorFormat.LINEAR
         )
 
-
-      //models/pawn.obj
       var sharedPref = activity.getPreferences(Context.MODE_PRIVATE)
       var retrievedValue = sharedPref?.getString("a", "default_value")
-      virtualObjectMesh = Mesh.createFromAsset(render, retrievedValue)
+      //virtualObjectMesh.add(Mesh.createFromAsset(render, retrievedValue))
+
+
+
+      //models/pawn.obj
+
+      //List<GameObject>
+
 
       //val root = View.inflate(activity, R.layout.activity_main, null)
       //virtualObjectMesh = Mesh.createFromAsset(render, root.findViewById<TextView>(R.id.Lapelis).text.toString())//models/pawn.obj
@@ -395,6 +403,7 @@ class HelloArRenderer(val activity: HelloArActivity) :
 
     // Visualize anchors created by touch.
     render.clear(virtualSceneFramebuffer, 0f, 0f, 0f, 0f)
+
     for ((anchor, trackable) in
       wrappedAnchors.filter { it.anchor.trackingState == TrackingState.TRACKING }) {
       // Get the current pose of an Anchor in world space. The Anchor pose is updated
@@ -419,9 +428,13 @@ class HelloArRenderer(val activity: HelloArActivity) :
       virtualObjectShader.setTexture("u_AlbedoTexture", texture)
       //
 
+      render.draw(Mesh.createFromAsset(render, virtualObjectMeshNamesList[currentIndex]), virtualObjectShader, virtualSceneFramebuffer)
+      currentIndex+=1
+
       //
-      render.draw(virtualObjectMesh, virtualObjectShader, virtualSceneFramebuffer)
+
     }
+    currentIndex=0
 
     // Compose the virtual scene with the background.
     backgroundRenderer.drawVirtualScene(render, virtualSceneFramebuffer, Z_NEAR, Z_FAR)
@@ -502,6 +515,11 @@ class HelloArRenderer(val activity: HelloArActivity) :
       } else {
         frame.hitTest(tap)
       }
+    var sharedPref = activity.getPreferences(Context.MODE_PRIVATE)
+    var retrievedValue = sharedPref?.getString("a", "default_value")
+    //virtualObjectMesh.add(Mesh.createFromAsset(render, retrievedValue))
+    virtualObjectMeshNamesList.add(retrievedValue ?: "default_value")
+    virtualObjectMeshCount+=1
 
     // Hits are sorted by depth. Consider only closest hit on a plane, Oriented Point, Depth Point,
     // or Instant Placement Point.

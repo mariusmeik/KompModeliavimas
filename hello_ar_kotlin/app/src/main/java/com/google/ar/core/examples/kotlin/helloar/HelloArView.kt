@@ -39,8 +39,8 @@ class HelloArView(val activity: HelloArActivity) : DefaultLifecycleObserver {
         PopupMenu(activity, v).apply {
           setOnMenuItemClickListener { item ->
             when (item.itemId) {
-              R.id.depth_settings -> launchDepthSettingsMenuDialog()
-              R.id.instant_placement_settings -> launchInstantPlacementSettingsMenuDialog()
+              //R.id.depth_settings -> launchDepthSettingsMenuDialog()
+              //R.id.instant_placement_settings -> launchInstantPlacementSettingsMenuDialog()
               R.id.veikejas -> pasirinktiVeikeja()
               R.id.labirintas -> pasirinktiLabirinta()
               else -> null

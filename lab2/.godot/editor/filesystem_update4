@@ -1,7 +1,5 @@
-res://levels/node_3d.gd
-res://levels/CharacterBody3D.gd
-res://zaidejasKlonas.tscn
 res://character_body_3d.tscn
 res://levels/node_3d.tscn
+res://zaidejasKlonas.tscn
 res://levels/fonine_muzika.tscn
 res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.tscn
