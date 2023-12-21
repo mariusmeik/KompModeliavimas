@@ -1,25 +1,25 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703117043
+::res://::1703174131
 character_body_3d.gd::GDScript::-1::1703094236::0::1::::<>CharacterBody3D<>::
-character_body_3d.tscn::PackedScene::4117201433889072526::1703094236::0::1::::<><>::res://character_body_3d.gd<>uid://x0knp41366ff::::res://tutorial/Enemy.png<>uid://bbrjaloumrj3k::::res://sounds/Minecraft Zombie hit - Sound effect (HD).mp3
+character_body_3d.tscn::PackedScene::4117201433889072526::1703117048::0::1::::<><>::res://character_body_3d.gd<>uid://x0knp41366ff::::res://tutorial/Enemy.png<>uid://bbrjaloumrj3k::::res://sounds/Minecraft Zombie hit - Sound effect (HD).mp3
 export_presets.cfg::TextFile::-1::1703094236::0::1::::<><>::
 icon.png::CompressedTexture2D::1292577906376280878::1703094236::1703094236::1::::<><>::
-muzika.tscn::PackedScene::2902675309397731171::1703094238::0::1::::<><>::uid://df0s2x8mv50t0::::res://sounds/The only thing they fear is you (With opening monologue).mp3
+muzika.tscn::PackedScene::2902675309397731171::1703094238::0::1::::<><>::uid://df0s2x8mv50t0
 TEST.tscn::PackedScene::2543927519423765999::1703094236::0::1::::<><>::
 world.gd::GDScript::-1::1703094238::0::1::::<>RefCounted<>::
-world.tscn::PackedScene::4867225043101524473::1703094238::0::1::::<><>::uid://bywnyah8p4lfa::::res://character_body_3d.tscn<>uid://cgqccf78ujs2n::::res://zaidejasKlonas.tscn<>uid://bhmcvx3fka3qt::::res://muzika.tscn
-zaidejasKlonas.tscn::PackedScene::5227129792429658771::1703094238::0::1::::<><>::res://levels/CharacterBody3D.gd<>uid://6whk610y058j::::res://tutorial/fe0bdd2b-8890-4c82-aaf8-7c036272e66b.png<>uid://dbduds4bsaaby::::res://Scenes/Bullet/Bullet.tscn<>uid://dq8gum5b0848d::::res://tutorial/starSpin.png<>uid://cbd3f4epfxqnb::::res://tutorial/665ebd54-85d9-4c1b-8063-62c22fa24c01.png<>uid://da61a8lb6d51j::::res://sounds/Gunshot Sound Effect Single Shot.mp3
+world.tscn::PackedScene::4867225043101524473::1703094238::0::1::::<><>::uid://bywnyah8p4lfa
+zaidejasKlonas.tscn::PackedScene::5227129792429658771::1703117168::0::1::::<><>::res://levels/CharacterBody3D.gd<>uid://6whk610y058j::::res://tutorial/fe0bdd2b-8890-4c82-aaf8-7c036272e66b.png<>uid://dbduds4bsaaby::::res://Scenes/Bullet/Bullet.tscn<>uid://dq8gum5b0848d::::res://tutorial/starSpin.png<>uid://cbd3f4epfxqnb::::res://tutorial/665ebd54-85d9-4c1b-8063-62c22fa24c01.png<>uid://da61a8lb6d51j::::res://sounds/Gunshot Sound Effect Single Shot.mp3
 zombie.tscn::PackedScene::8150644334529061981::1703094238::0::1::::<><>::
 ::res://addons/::1703094236
 ::res://addons/devblocks/::1703094236
 ::res://addons/devblocks/blocks/::1703094236
 basic_block.gd::GDScript::-1::1703094236::0::1::::BasicBlock<>StaticBody3D<>::
-basic_block.tscn::PackedScene::7848614217937656307::1703094236::0::1::::<><>::res://addons/devblocks/blocks/basic_block.gd<>uid://bwm3chclmoo0x::::res://addons/devblocks/textures/dark/texture_01.png
+basic_block.tscn::PackedScene::7848614217937656307::1703094236::0::1::::<><>::res://addons/devblocks/blocks/basic_block.gd<>uid://bwm3chclmoo0x
 block_material.tres::StandardMaterial3D::3413580627641339814::1703094236::0::1::::<><>::
 colored_block.gd::GDScript::-1::1703094236::0::1::::ColoredBlock<>BasicBlock<>::
-colored_block.tscn::PackedScene::4798893435586544330::1703094236::0::1::::<><>::uid://dj26sacnhty4r::::res://addons/devblocks/blocks/basic_block.tscn<>res://addons/devblocks/blocks/colored_block.gd<>uid://b18i1whruu2uo::::res://addons/devblocks/textures/dark/texture_01.png
+colored_block.tscn::PackedScene::4798893435586544330::1703094236::0::1::::<><>::uid://dj26sacnhty4r
 emission_block.gd::GDScript::-1::1703094236::0::1::::EmissionBlock<>ColoredBlock<>::
-emission_block.tscn::PackedScene::50786946940051541::1703094236::0::1::::<><>::uid://camvcri7e11vi::::res://addons/devblocks/blocks/colored_block.tscn<>res://addons/devblocks/blocks/emission_block.gd<>uid://b18i1whruu2uo::::res://addons/devblocks/textures/dark/texture_01.png
+emission_block.tscn::PackedScene::50786946940051541::1703094236::0::1::::<><>::uid://camvcri7e11vi
 ::res://addons/devblocks/textures/::1703094236
 License.txt::TextFile::-1::1703094236::0::1::::<><>::
 ::res://addons/devblocks/textures/dark/::1703094236
@@ -117,9 +117,9 @@ catalog.json::JSON::-1::1703094238::0::1::::<><>::
 location.txt::TextFile::-1::1703094238::0::1::::<><>::
 ::res://imports/uploads_files_3168242_Demon/Assets/::1703094236
 ::res://imports/uploads_files_3168242_Demon/Assets/Demon/::1703094237
-::res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/::1703094236
+::res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/::1703117048
 Demo - Copy.gd::GDScript::-1::1703094236::0::1::::<>CharacterBody3D<>::
-Demo - Copy.tscn::PackedScene::7579371999038076368::1703094236::0::1::::<><>::res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.gd<>res://imports/uploads_files_3168242_Demon/Assets/Demon/Mesh/DemonBoss_mesh/Devil_4300000.mesh<>res://imports/uploads_files_3168242_Demon/Assets/Demon/Materials/PBRDemon.tres<>uid://bbrjaloumrj3k::::res://sounds/Minecraft Zombie hit - Sound effect (HD).mp3
+Demo - Copy.tscn::PackedScene::7579371999038076368::1703117048::0::1::::<><>::res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.gd<>res://imports/uploads_files_3168242_Demon/Assets/Demon/Mesh/DemonBoss_mesh/Devil_4300000.mesh<>res://imports/uploads_files_3168242_Demon/Assets/Demon/Materials/PBRDemon.tres<>uid://bbrjaloumrj3k::::res://sounds/Minecraft Zombie hit - Sound effect (HD).mp3
 Demo.tscn::PackedScene::-1::1703094236::0::1::::<><>::res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Texture/Floor.tres<>res://imports/uploads_files_3168242_Demon/Assets/Demon/Mesh/DemonBoss_mesh/Devil_4300000.mesh<>res://imports/uploads_files_3168242_Demon/Assets/Demon/Materials/PBRDemon.tres
 ::res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Texture/::1703094236
 floor14.tex::ImageTexture::-1::1703094236::0::1::::<><>::
@@ -165,22 +165,22 @@ Demon_PBR_Spec.tex::ImageTexture::-1::1703094238::0::1::::<><>::
 Demon_PBR_Spec.tga::CompressedTexture2D::1780394534227776846::1703094238::1703094238::1::::<><>::
 Demon_Violet_Diffuse.png::CompressedTexture2D::1107873161568032097::1703094238::1703094238::1::::<><>::
 Demon_Violet_Diffuse.tex::ImageTexture::-1::1703094238::0::1::::<><>::
-::res://levels/::1703094238
-bosas.tscn::PackedScene::2057088160280466503::1703094238::0::1::::<><>::res://character_body_3d.gd<>uid://bbrjaloumrj3k::::res://sounds/Minecraft Zombie hit - Sound effect (HD).mp3<>res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo.tscn
+::res://levels/::1703117048
+bosas.tscn::PackedScene::2057088160280466503::1703094238::0::1::::<><>::res://character_body_3d.gd<>uid://bbrjaloumrj3k
 CharacterBody3D.gd::GDScript::-1::1703094238::0::1::::<>CharacterBody3D<>::
-fonine_muzika.tscn::PackedScene::2945363591216683088::1703094238::0::1::::<><>::uid://df0s2x8mv50t0::::res://sounds/The only thing they fear is you (With opening monologue).mp3
+fonine_muzika.tscn::PackedScene::2945363591216683088::1703117048::0::1::::<><>::uid://df0s2x8mv50t0::::res://sounds/The only thing they fear is you (With opening monologue).mp3
 node_3d.gd::GDScript::-1::1703094238::0::1::::<>Node3D<>::
-node_3d.tscn::PackedScene::6106887678185798000::1703094238::0::1::::<><>::uid://bywnyah8p4lfa::::res://character_body_3d.tscn<>res://levels/node_3d.gd<>uid://dj26sacnhty4r::::res://addons/devblocks/blocks/basic_block.tscn<>uid://cgp4mvev1cbra::::res://addons/devblocks/textures/purple/texture_01.png<>uid://cgqccf78ujs2n::::res://zaidejasKlonas.tscn<>uid://bh70ycqgn0vt5::::res://levels/fonine_muzika.tscn<>uid://df8rfc1sgpu0w::::res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.tscn
+node_3d.tscn::PackedScene::6106887678185798000::1703117048::0::1::::<><>::uid://bywnyah8p4lfa::::res://character_body_3d.tscn<>res://levels/node_3d.gd<>uid://dj26sacnhty4r::::res://addons/devblocks/blocks/basic_block.tscn<>uid://cgp4mvev1cbra::::res://addons/devblocks/textures/purple/texture_01.png<>uid://cgqccf78ujs2n::::res://zaidejasKlonas.tscn<>uid://bh70ycqgn0vt5::::res://levels/fonine_muzika.tscn<>uid://df8rfc1sgpu0w::::res://imports/uploads_files_3168242_Demon/Assets/Demon/Demo/Demo - Copy.tscn
 ::res://Scenes/::1703094236
 ::res://Scenes/Bullet/::1703094236
-Bullet.tscn::PackedScene::7236864715505679034::1703094236::0::1::::<><>::uid://bdknsji4lw07x::::res://Scenes/Bullet/Assets/hole-difuse.png<>uid://byc6edrbpdfog::::res://Scenes/Bullet/Assets/hole-normal.png
+Bullet.tscn::PackedScene::7236864715505679034::1703094236::0::1::::<><>::uid://bdknsji4lw07x
 ::res://Scenes/Bullet/Assets/::1703094236
 heightmap.png::CompressedTexture2D::8600318480296998228::1703094236::1703094236::1::::<><>::
 hole-difuse.png::CompressedTexture2D::2618452943745856443::1703094236::1703094236::1::::<><>::
 hole-normal.png::CompressedTexture2D::4076971240362707934::1703094236::1703094236::1::::<><>::
 ::res://Scenes/Player/::1703094236
 player.gd::GDScript::-1::1703094236::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::2259760567261654383::1703094236::0::1::::<><>::res://Scenes/Player/player.gd<>uid://dbduds4bsaaby::::res://Scenes/Bullet/Bullet.tscn
+player.tscn::PackedScene::2259760567261654383::1703094236::0::1::::<><>::res://Scenes/Player/player.gd<>uid://dbduds4bsaaby
 Timer.gd::GDScript::-1::1703094236::0::1::::<>RefCounted<>::
 ::res://sounds/::1703094238
 Gunshot Sound Effect Single Shot.mp3::AudioStreamMP3::7224838153617502941::1703094238::1703094238::1::::<><>::
